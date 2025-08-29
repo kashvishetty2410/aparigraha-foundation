@@ -89,7 +89,7 @@ const Footer = () => {
               <div className="w-12 h-12 bg-gradient-to-br from-secondary to-secondary-light rounded-lg flex items-center justify-center">
                 <Heart className="h-6 w-6 text-white" />
               </div>
-              <span className="text-2xl font-bold">Hope Foundation</span>
+              <span className="text-2xl font-bold">Aparigraha Foundation</span>
             </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
               Empowering communities worldwide through sustainable education, healthcare, 
@@ -202,7 +202,7 @@ const Footer = () => {
       <div className="container-custom py-6">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-sm text-primary-foreground/80">
-            © 2024 Hope Foundation. All rights reserved. | EIN: 12-3456789
+            © 2024 Aparigraha Foundation. All rights reserved. | EIN: 12-3456789
           </div>
           <div className="flex items-center space-x-6 text-sm text-primary-foreground/80">
             <span>Made with ❤️ for a better world</span>

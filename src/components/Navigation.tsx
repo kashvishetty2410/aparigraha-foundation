@@ -49,9 +49,9 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">H</span>
+              <span className="text-white font-bold text-xl">A</span>
             </div>
-            <span className="text-xl font-bold text-foreground">Hope Foundation</span>
+            <span className="text-xl font-bold text-foreground">Aparigraha Foundation</span>
           </div>
 
           {/* Desktop Navigation */}

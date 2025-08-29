@@ -9,7 +9,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img 
           src={heroImage}
-          alt="Hope Foundation making impact in communities"
+          alt="Aparigraha Foundation making impact in communities"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 hero-gradient"></div>

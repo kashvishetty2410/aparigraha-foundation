@@ -18,17 +18,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 15%;
 
-    /* Primary - Deep Trust Blue */
-    --primary: 215 85% 25%;
+    /* Primary - Deep Purple for elegance and trust */
+    --primary: 270 60% 20%;
     --primary-foreground: 0 0% 98%;
-    --primary-light: 215 75% 35%;
-    --primary-dark: 215 90% 15%;
+    --primary-light: 270 60% 30%;
+    --primary-dark: 270 60% 15%;
 
-    /* Secondary - Hope Orange */
-    --secondary: 25 95% 55%;
+    /* Secondary - Soft Pink for warmth and compassion */
+    --secondary: 320 70% 70%;
     --secondary-foreground: 0 0% 98%;
-    --secondary-light: 25 90% 65%;
-    --secondary-dark: 25 100% 45%;
+    --secondary-light: 320 70% 80%;
+    --secondary-dark: 320 70% 60%;
 
     /* Support Colors */
     --muted: 215 20% 96%;
@@ -42,21 +42,21 @@
 
     --border: 215 20% 90%;
     --input: 215 20% 90%;
-    --ring: 215 85% 25%;
+    --ring: 270 60% 20%;
 
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(215 85% 25%), hsl(215 75% 35%));
-    --gradient-secondary: linear-gradient(135deg, hsl(25 95% 55%), hsl(25 90% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(215 85% 25% / 0.9), hsl(25 95% 55% / 0.8));
+    --gradient-primary: linear-gradient(135deg, hsl(270 60% 20%), hsl(270 60% 30%));
+    --gradient-secondary: linear-gradient(135deg, hsl(320 70% 70%), hsl(320 70% 80%));
+    --gradient-hero: linear-gradient(135deg, hsl(270 60% 20% / 0.9), hsl(320 70% 70% / 0.8));
     --gradient-subtle: linear-gradient(180deg, hsl(215 20% 98%), hsl(215 20% 96%));
 
     /* Shadows */
     --shadow-soft: 0 4px 20px hsl(215 25% 15% / 0.08);
     --shadow-medium: 0 8px 30px hsl(215 25% 15% / 0.12);
     --shadow-strong: 0 16px 40px hsl(215 25% 15% / 0.16);
-    --shadow-glow: 0 0 40px hsl(215 85% 25% / 0.15);
+    --shadow-glow: 0 0 40px hsl(270 60% 20% / 0.15);
 
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
