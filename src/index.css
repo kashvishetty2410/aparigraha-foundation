@@ -1,42 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* NGO Website Design System - Trustworthy, Modern, Impactful */
 
 @layer base {
   :root {
+    /* Brand Colors - Deep Trust Blue & Hope Orange */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Deep Trust Blue */
+    --primary: 215 85% 25%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 215 75% 35%;
+    --primary-dark: 215 90% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Hope Orange */
+    --secondary: 25 95% 55%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-light: 25 90% 65%;
+    --secondary-dark: 25 100% 45%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Support Colors */
+    --muted: 215 20% 96%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 155 60% 45%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 20% 90%;
+    --input: 215 20% 90%;
+    --ring: 215 85% 25%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(215 85% 25%), hsl(215 75% 35%));
+    --gradient-secondary: linear-gradient(135deg, hsl(25 95% 55%), hsl(25 90% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(215 85% 25% / 0.9), hsl(25 95% 55% / 0.8));
+    --gradient-subtle: linear-gradient(180deg, hsl(215 20% 98%), hsl(215 20% 96%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(215 25% 15% / 0.08);
+    --shadow-medium: 0 8px 30px hsl(215 25% 15% / 0.12);
+    --shadow-strong: 0 16px 40px hsl(215 25% 15% / 0.16);
+    --shadow-glow: 0 0 40px hsl(215 85% 25% / 0.15);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +124,121 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    @apply font-medium;
+  }
+}
+
+@layer components {
+  /* Hero Section */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .hero-title {
+    @apply text-4xl md:text-6xl lg:text-7xl font-bold leading-tight;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Card Components */
+  .impact-card {
+    @apply bg-card rounded-2xl p-8 shadow-[var(--shadow-soft)] border border-border/50;
+    transition: var(--transition-smooth);
+  }
+
+  .impact-card:hover {
+    @apply shadow-[var(--shadow-medium)] -translate-y-1;
+  }
+
+  .program-card {
+    @apply bg-gradient-to-br from-card to-muted/30 rounded-2xl p-6 border border-border/30;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+  }
+
+  .program-card:hover {
+    box-shadow: var(--shadow-medium);
+    @apply -translate-y-1;
+  }
+
+  /* Button Variants */
+  .btn-hero {
+    @apply bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 py-4 rounded-xl;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-hero:hover {
+    @apply -translate-y-0.5;
+    box-shadow: var(--shadow-medium);
+  }
+
+  .btn-outline-hero {
+    @apply border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold px-8 py-4 rounded-xl;
+    transition: var(--transition-smooth);
+  }
+
+  .btn-outline-hero:hover {
+    @apply -translate-y-0.5 border-white/50;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply text-foreground/80 hover:text-foreground font-medium transition-colors relative;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  /* Animations */
+  .fade-in-up {
+    @apply opacity-0 translate-y-6;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+
+  /* Counter Animation */
+  .counter {
+    @apply font-bold text-4xl lg:text-5xl;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Utility Classes */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
