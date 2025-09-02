@@ -8,8 +8,8 @@ import communityImage from "@/assets/community-impact.jpg";
 const ProgramsSection = () => {
   const programs = [
     {
-      id: "education",
-      title: "Education Initiative",
+      id: "aursunao",
+      title: "AurSunao",
       description: "Providing quality education and learning resources to underserved communities.",
       image: educationImage,
       icon: BookOpen,
@@ -30,8 +30,8 @@ const ProgramsSection = () => {
       }
     },
     {
-      id: "community",
-      title: "Community Development",
+      id: "indradhanush",
+      title: "Indradhanush",
       description: "Empowering communities through infrastructure and economic development projects.",
       image: communityImage,
       icon: Home,
@@ -52,8 +52,8 @@ const ProgramsSection = () => {
       }
     },
     {
-      id: "healthcare",
-      title: "Healthcare Access",
+      id: "pragya",
+      title: "Pragya",
       description: "Improving healthcare accessibility and quality in remote and underserved areas.",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
       icon: Heart,

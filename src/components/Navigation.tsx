@@ -24,12 +24,12 @@ const Navigation = () => {
     { name: "Home", href: "#home" },
     { name: "About Us", href: "#about" },
     { 
-      name: "Our Work", 
+      name: "Programs", 
       href: "#programs",
       dropdown: [
-        { name: "Education Initiative", href: "#education" },
-        { name: "Community Development", href: "#community" },
-        { name: "Healthcare Access", href: "#healthcare" }
+        { name: "AurSunao", href: "#aursunao" },
+        { name: "Indradhanush", href: "#indradhanush" },
+        { name: "Pragya", href: "#pragya" }
       ]
     },
     { name: "Impact", href: "#impact" },

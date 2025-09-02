@@ -56,22 +56,20 @@ const AboutSection = () => {
             About Us
           </Badge>
           <h2 className="text-4xl lg:text-5xl font-bold mb-8 gradient-text">
-            Building Bridges to Brighter Futures
+            Best Way to live life is "Live and Let Live"
           </h2>
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <div className="text-left">
                 <h3 className="text-2xl font-semibold mb-4 text-primary">Our Mission</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  To empower underserved communities worldwide through sustainable education, 
-                  healthcare, and economic development programs that create lasting positive change.
+                 To Empower "YOUNG India" with skills, tools, Techniques and methods to Face the Global Change 
                 </p>
               </div>
               <div className="text-left">
                 <h3 className="text-2xl font-semibold mb-4 text-primary">Our Vision</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  A world where every individual has access to the resources and opportunities 
-                  needed to reach their full potential and contribute to thriving communities.
+                 Empowering vision through belief to create lasting impact and inspire positive change.
                 </p>
               </div>
             </div>
