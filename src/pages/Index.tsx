@@ -15,12 +15,14 @@ const Index = () => {
       
       {/* Main Content */}
       <main>
-        <HeroSection />
-        <AboutSection />
-        <ProgramsSection />
-        <ImpactSection />
-        <EngagementSection />
-        <NewsSection />
+        <div className="bg-[#f3e2ea]">
+          <HeroSection />
+          <AboutSection />
+          <ProgramsSection />
+          <ImpactSection />
+          <EngagementSection />
+          <NewsSection />
+        </div>
       </main>
       
       {/* Footer */}

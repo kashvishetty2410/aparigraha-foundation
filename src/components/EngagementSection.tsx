@@ -123,7 +123,7 @@ const EngagementSection = () => {
                       <Button
                         key={option.amount}
                         variant={option.popular ? "default" : "outline"}
-                        className={`relative flex-col h-auto p-4 ${
+                        className={`relative flex-col h-auto p-4 text-wrap ${
                           option.popular ? "ring-2 ring-secondary" : ""
                         }`}
                       >

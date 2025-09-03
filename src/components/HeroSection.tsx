@@ -29,32 +29,32 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-up stagger-2">
-            <Button className="btn-hero text-lg px-10 py-5">
+            <Button className="bg-[#331452] text-lg px-10 py-5">
               Donate Now
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button className="btn-outline-hero text-lg px-10 py-5">
+            <Button className="bg-[#331452] text-lg px-10 py-5">
               <Play className="mr-2 h-5 w-5" />
               Watch Our Story
             </Button>
           </div>
 
           {/* Impact Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 fade-in-up stagger-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 fade-in-up stagger-3 bg-[#331452]/60 rounded-md py-4">
             <div className="text-center">
-              <div className="counter text-secondary mb-2">500K+</div>
+              <div className="counter text-secondary mb-2 text-[#f1b1dc]">500K+</div>
               <p className="text-white/80 text-sm uppercase tracking-wide">Lives Impacted</p>
             </div>
             <div className="text-center">
-              <div className="counter text-secondary mb-2">1,200</div>
-              <p className="text-white/80 text-sm uppercase tracking-wide">Projects Completed</p>
+              <div className="counter text-secondary mb-2 text-[#f1b1dc]">1,200</div>
+              <p className="text-white/80 text-sm uppercase tracking-wide ">Projects Completed</p>
             </div>
             <div className="text-center">
-              <div className="counter text-secondary mb-2">45</div>
+              <div className="counter text-secondary mb-2 text-[#f1b1dc]">45</div>
               <p className="text-white/80 text-sm uppercase tracking-wide">Countries Served</p>
             </div>
             <div className="text-center">
-              <div className="counter text-secondary mb-2">25</div>
+              <div className="counter text-secondary mb-2 text-[#f1b1dc]">25</div>
               <p className="text-white/80 text-sm uppercase tracking-wide">Years of Impact</p>
             </div>
           </div>
@@ -62,11 +62,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
-        </div>
-      </div>
+      
     </section>
   );
 };

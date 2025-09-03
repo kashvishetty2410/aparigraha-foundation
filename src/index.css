@@ -188,9 +188,29 @@
     @apply -translate-y-0.5 border-white/50;
   }
 
+  .btn-tprimary {
+    @apply bg-muted hover:bg-primary-light text-primary-foreground font-semibold px-6 py-3 rounded-lg;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+  }
+  .btn-tprimary:hover {
+    @apply -translate-y-0.5;
+    box-shadow: var(--shadow-medium);
+  }
+
   /* Navigation */
   .nav-link {
-    @apply text-foreground/80 hover:text-foreground font-medium transition-colors relative;
+    @apply font-medium transition-colors relative;
+  }
+
+  /* Not scrolled state */
+  .nav-link:not(.scrolled) {
+    @apply text-white hover:text-white/80;
+  }
+
+  /* Scrolled state */
+  .nav-link.scrolled {
+    @apply text-foreground hover:text-foreground/80;
   }
 
   .nav-link::after {
