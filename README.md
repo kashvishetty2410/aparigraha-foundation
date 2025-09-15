@@ -1,22 +1,56 @@
-# Welcome to your Lovable project
+# Aparigraha Foundation Project
 
-## Project info
+## How can I contribute to this project?
 
-**URL**: https://lovable.dev/projects/c0755b7c-04fd-491e-93d6-33b7575ed7b2
+### Steps to raise a Pull Request (PR)
+
+1. Fork the repository
+2. Clone your forked repository to your local machine
+3. Create a new branch for your feature or bug fix:
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+   or
+
+   ```bash
+   git checkout -b bugfix/your-bugfix-name
+   ```
+
+4. Make your changes and commit them with a clear, descriptive commit message:
+
+   ```bash
+   git add .
+   git commit -m "Add a brief description of your changes"
+   ```
+
+5. Push your changes to your fork:
+
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+6. Go to the original repository on GitHub and create a new Pull Request
+7. Fill out the PR template with the necessary details about your changes
+8. Submit your Pull Request for review
+
+### PR Template
+
+When creating a Pull Request, please use the provided template which includes:
+
+- A description of the changes
+- The type of change (bug fix, new feature, etc.)
+- Testing information
+- A checklist of items to ensure code quality
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/c0755b7c-04fd-491e-93d6-33b7575ed7b2) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+You can clone this repo and push changes. Pushed changes will be reflected in the repository.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,12 +96,4 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/c0755b7c-04fd-491e-93d6-33b7575ed7b2) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+You can build and deploy this project using the standard deployment process for Vite applications.
