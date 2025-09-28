@@ -7,22 +7,22 @@ import { Heart, Users, Building, Calendar, ArrowRight, Mail, Phone, MapPin } fro
 const EngagementSection = () => {
   const donationOptions = [
     {
-      amount: "$25",
+      amount: "₹25",
       impact: "Provides school supplies for 5 children",
       popular: false
     },
     {
-      amount: "$50",
+      amount: "₹50",
       impact: "Funds clean water for a family for 6 months",
       popular: true
     },
     {
-      amount: "$100",
+      amount: "₹100",
       impact: "Sponsors a child's education for one semester",
       popular: false
     },
     {
-      amount: "$250",
+      amount: "₹250",
       impact: "Builds a well that serves an entire village",
       popular: false
     }
@@ -55,7 +55,7 @@ const EngagementSection = () => {
   const partnershipTiers = [
     {
       title: "Community Partner",
-      amount: "$1,000+",
+      amount: "₹67+",
       benefits: [
         "Quarterly impact reports",
         "Recognition on website",
@@ -64,7 +64,7 @@ const EngagementSection = () => {
     },
     {
       title: "Impact Partner",
-      amount: "$5,000+",
+      amount: "₹19000+",
       benefits: [
         "All Community Partner benefits",
         "Site visit opportunity",
@@ -74,7 +74,7 @@ const EngagementSection = () => {
     },
     {
       title: "Transformational Partner",
-      amount: "$25,000+",
+      amount: "₹53000+",
       benefits: [
         "All Impact Partner benefits",
         "Program naming opportunity",
@@ -123,7 +123,7 @@ const EngagementSection = () => {
                       <Button
                         key={option.amount}
                         variant={option.popular ? "default" : "outline"}
-                        className={`relative flex-col h-auto p-4 text-wrap ${
+                        className={`relative flex-col h-auto p-4 text-wrap ₹{
                           option.popular ? "ring-2 ring-secondary" : ""
                         }`}
                       >
@@ -178,7 +178,7 @@ const EngagementSection = () => {
               <CardContent>
                 <div className="space-y-4">
                   <div className="text-center p-4 bg-primary/5 rounded-lg">
-                    <div className="text-3xl font-bold text-primary mb-2">$50</div>
+                    <div className="text-3xl font-bold text-primary mb-2">₹50</div>
                     <div className="text-sm text-muted-foreground">Your donation could provide:</div>
                     <ul className="text-sm mt-2 space-y-1">
                       <li>✓ Clean water for 1 family (6 months)</li>
@@ -208,7 +208,7 @@ const EngagementSection = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {volunteerOpportunities.map((opportunity, index) => (
-              <Card key={opportunity.title} className={`program-card fade-in-up stagger-${index + 1}`}>
+              <Card key={opportunity.title} className={`program-card fade-in-up stagger-₹{index + 1}`}>
                 <CardHeader>
                   <CardTitle className="text-xl">{opportunity.title}</CardTitle>
                   <div className="flex items-center space-x-4 text-sm text-muted-foreground">
@@ -257,7 +257,7 @@ const EngagementSection = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {partnershipTiers.map((tier, index) => (
-              <Card key={tier.title} className={`program-card text-center ${
+              <Card key={tier.title} className={`program-card text-center ₹{
                 index === 1 ? "ring-2 ring-secondary scale-105" : ""
               }`}>
                 <CardHeader>
