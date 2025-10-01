@@ -7,22 +7,22 @@ import { Heart, Users, Building, Calendar, ArrowRight, Mail, Phone, MapPin } fro
 const EngagementSection = () => {
   const donationOptions = [
     {
-      amount: "$25",
+      amount: "₹2,000",
       impact: "Provides school supplies for 5 children",
       popular: false
     },
     {
-      amount: "$50",
+      amount: "₹5,000",
       impact: "Funds clean water for a family for 6 months",
       popular: true
     },
     {
-      amount: "$100",
+      amount: "₹10,000",
       impact: "Sponsors a child's education for one semester",
       popular: false
     },
     {
-      amount: "$250",
+      amount: "₹50,000",
       impact: "Builds a well that serves an entire village",
       popular: false
     }
@@ -55,7 +55,7 @@ const EngagementSection = () => {
   const partnershipTiers = [
     {
       title: "Community Partner",
-      amount: "$1,000+",
+      amount: "₹25,000+",
       benefits: [
         "Quarterly impact reports",
         "Recognition on website",
@@ -64,7 +64,7 @@ const EngagementSection = () => {
     },
     {
       title: "Impact Partner",
-      amount: "$5,000+",
+      amount: "₹1,00,000+",
       benefits: [
         "All Community Partner benefits",
         "Site visit opportunity",
@@ -74,7 +74,7 @@ const EngagementSection = () => {
     },
     {
       title: "Transformational Partner",
-      amount: "$25,000+",
+      amount: "₹2,50,000+",
       benefits: [
         "All Impact Partner benefits",
         "Program naming opportunity",
@@ -178,7 +178,7 @@ const EngagementSection = () => {
               <CardContent>
                 <div className="space-y-4">
                   <div className="text-center p-4 bg-primary/5 rounded-lg">
-                    <div className="text-3xl font-bold text-primary mb-2">$50</div>
+                    <div className="text-3xl font-bold text-primary mb-2">₹6000</div>
                     <div className="text-sm text-muted-foreground">Your donation could provide:</div>
                     <ul className="text-sm mt-2 space-y-1">
                       <li>✓ Clean water for 1 family (6 months)</li>
@@ -187,7 +187,7 @@ const EngagementSection = () => {
                     </ul>
                   </div>
                   <div className="text-xs text-muted-foreground text-center">
-                    95% of every dollar goes directly to programs
+                    95% of every single rupee goes directly to the programs
                   </div>
                 </div>
               </CardContent>
@@ -252,7 +252,7 @@ const EngagementSection = () => {
               Corporate & Institutional Partnerships
             </h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Partner with us to align your organization's values with meaningful social impact while engaging your stakeholders.
+              Partner with us to align your organization's values with meaningful social impact while also engaging your stakeholders.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">

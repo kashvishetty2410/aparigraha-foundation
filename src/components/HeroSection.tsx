@@ -19,7 +19,7 @@ const HeroSection = () => {
       <div className="relative z-10 container-custom">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h1 className="hero-title mb-6 fade-in-up">
-            Dedicated to Making a Holistic Diffrence
+            Dedicated to Making a Holistic Difference
             <span className="block text-secondary">in the Quality of Life.</span>
           </h1>
           
