@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Users, Building, Calendar, ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const EngagementSection = () => {
   const donationOptions = [
@@ -120,23 +121,24 @@ const EngagementSection = () => {
                   <h4 className="font-semibold mb-4">Choose an amount:</h4>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                     {donationOptions.map((option) => (
-                      <Button
-                        key={option.amount}
-                        variant={option.popular ? "default" : "outline"}
-                        className={`relative flex-col h-auto p-4 text-wrap ${
-                          option.popular ? "ring-2 ring-secondary" : ""
-                        }`}
-                      >
-                        {option.popular && (
-                          <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-secondary text-secondary-foreground">
-                            Popular
-                          </Badge>
-                        )}
-                        <span className="text-lg font-bold">{option.amount}</span>
-                        <span className="text-xs text-center mt-1 opacity-80">
-                          {option.impact}
-                        </span>
-                      </Button>
+                      <Link to="/volunteer" key={option.amount}>
+                        <Button
+                          variant={option.popular ? "default" : "outline"}
+                          className={`relative flex-col h-auto p-4 text-wrap w-full ${
+                            option.popular ? "ring-2 ring-secondary" : ""
+                          }`}
+                        >
+                          {option.popular && (
+                            <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-secondary text-secondary-foreground">
+                              Popular
+                            </Badge>
+                          )}
+                          <span className="text-lg font-bold">{option.amount}</span>
+                          <span className="text-xs text-center mt-1 opacity-80">
+                            {option.impact}
+                          </span>
+                        </Button>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -148,10 +150,12 @@ const EngagementSection = () => {
                     <div className="flex-1">
                       <Input type="number" placeholder="Enter amount" className="text-lg" />
                     </div>
-                    <Button className="btn-hero">
-                      Donate Now
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    <Link to="/volunteer">
+                      <Button className="btn-hero">
+                        Donate Now
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
 
@@ -161,9 +165,11 @@ const EngagementSection = () => {
                   <p className="text-sm text-muted-foreground mb-3">
                     Monthly donations help us plan long-term projects and provide stable support to communities.
                   </p>
-                  <Button variant="outline" size="sm">
-                    Set up Monthly Donation
-                  </Button>
+                  <Link to="/volunteer">
+                    <Button variant="outline" size="sm">
+                      Set up Monthly Donation
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -235,9 +241,11 @@ const EngagementSection = () => {
                       ))}
                     </ul>
                   </div>
-                  <Button variant="outline" className="w-full">
-                    Apply to Volunteer
-                  </Button>
+                  <Link to="/volunteer" className="w-full">
+                    <Button variant="outline" className="w-full">
+                      Apply to Volunteer
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -274,9 +282,11 @@ const EngagementSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" className="w-full">
-                    Become a Partner
-                  </Button>
+                  <Link to="/volunteer" className="w-full">
+                    <Button variant="outline" className="w-full">
+                      Become a Partner
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}

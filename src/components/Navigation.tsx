@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import {
@@ -28,15 +29,15 @@ const Navigation = () => {
       name: "Programs",
       href: "#programs",
       dropdown: [
-        { name: "AurSunao", href: "#aursunao" },
-        { name: "Indradhanush", href: "#indradhanush" },
-        { name: "Pragya", href: "#pragya" },
+        { name: "AurSunao", href: "/AurSunao" },
+        { name: "Indradhanush", href: "/Indradhanush" },
+        { name: "Pragya", href: "/Pragya" },
       ],
     },
     { name: "Impact", href: "#impact" },
     { name: "Get Involved", href: "#get-involved" },
     { name: "News", href: "#news" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -73,12 +74,12 @@ const Navigation = () => {
                         key={dropdownItem.name}
                         className="hover:bg-primary hover:text-white transition-colors focus:bg-primary focus:text-white"
                       >
-                        <a
-                          href={dropdownItem.href}
+                        <Link
+                          to={dropdownItem.href}
                           className="w-full block px-2 py-1"
                         >
                           {dropdownItem.name}
-                        </a>
+                        </Link>
                       </DropdownMenuItem>
                     ))}
                   </DropdownMenuContent>
@@ -97,10 +98,12 @@ const Navigation = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button className="btn-tprimary">
-              Volunteer
-            </Button>
-            <Button className="btn-hero">Donate Now</Button>
+            <Link to="/volunteer">
+              <Button className="btn-tprimary">Volunteer</Button>
+            </Link>
+            <Link to="/volunteer">
+              <Button className="btn-hero">Donate Now</Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -168,19 +171,23 @@ const Navigation = () => {
 
             {/* Mobile CTA */}
             <div className="flex flex-col space-y-2 pt-4 border-t border-border/30">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Volunteer
-              </Button>
-              <Button
-                className="btn-hero"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Donate Now
-              </Button>
+              <Link to="/volunteer">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Volunteer
+                </Button>
+              </Link>
+              <Link to="/volunteer">
+                <Button
+                  className="btn-hero"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Donate Now
+                </Button>
+              </Link>
             </div>
           </div>
         )}
