@@ -63,9 +63,17 @@ const Navigation = () => {
             {navItems.map((item) =>
               item.dropdown ? (
                 <DropdownMenu key={item.name}>
-                  <DropdownMenuTrigger className={`nav-link flex items-center space-x-1 ${isScrolled ? 'scrolled' : ''}`}>
+                  <DropdownMenuTrigger
+                    className={`nav-link flex items-center space-x-1 ${
+                      isScrolled ? "scrolled" : ""
+                    }`}
+                  >
                     <span>{item.name}</span>
-                    <ChevronDown className={`h-4 w-4 ${isScrolled ? 'text-foreground' : 'text-white'}`} />
+                    <ChevronDown
+                      className={`h-4 w-4 ${
+                        isScrolled ? "text-foreground" : "text-white"
+                      }`}
+                    />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="bg-background border border-border/30 shadow-medium">
                     {item.dropdown.map((dropdownItem) => (
@@ -87,7 +95,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`nav-link ${isScrolled ? 'scrolled' : ''}`}
+                  className={`nav-link ${isScrolled ? "scrolled" : ""}`}
                 >
                   {item.name}
                 </a>
@@ -97,9 +105,7 @@ const Navigation = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button className="btn-tprimary">
-              Volunteer
-            </Button>
+            <Button className="btn-tprimary">Volunteer</Button>
             <Button className="btn-hero">Donate Now</Button>
           </div>
 
@@ -120,13 +126,13 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border/30 bg-background/95 backdrop-blur-md">
+          <div className="lg:hidden py-4 border-t border-border/30 bg-transparent backdrop-blur-md">
             {navItems.map((item) =>
               item.dropdown ? (
                 <div key={item.name} className="relative">
                   <button
                     type="button"
-                    className="nav-link flex items-center space-x-1 w-full py-2"
+                    className="nav-link flex items-center space-x-1 w-full py-2 text-purple-600 font-semibold"  // ✅ CHANGED COLOR
                     onClick={() =>
                       setOpenDropdown((prev) =>
                         prev === item.name ? null : item.name
@@ -134,7 +140,7 @@ const Navigation = () => {
                     }
                   >
                     <span>{item.name}</span>
-                    <ChevronDown className="h-4 w-4" />
+                    <ChevronDown className="h-4 w-4 text-purple-600" /> {/* ✅ CHANGED COLOR */}
                   </button>
                   {openDropdown === item.name && (
                     <div className="pl-4">
@@ -142,7 +148,7 @@ const Navigation = () => {
                         <a
                           key={dropdownItem.name}
                           href={dropdownItem.href}
-                          className="block py-1 text-sm hover:bg-primary hover:text-white transition-colors"
+                          className="block py-1 text-sm text-purple-600 hover:text-purple-800 transition-colors" // ✅ CHANGED COLOR
                           onClick={() => {
                             setIsMobileMenuOpen(false);
                             setOpenDropdown(null);
@@ -158,7 +164,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="nav-link py-2"
+                  className="nav-link py-2 text-purple-600 font-semibold hover:text-purple-800 transition-colors" // ✅ CHANGED COLOR
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -172,11 +178,12 @@ const Navigation = () => {
                 variant="outline"
                 size="sm"
                 onClick={() => setIsMobileMenuOpen(false)}
+                className="border-purple-600 text-purple-600 hover:bg-purple-100"
               >
                 Volunteer
               </Button>
               <Button
-                className="btn-hero"
+                className="btn-hero bg-purple-600 hover:bg-purple-700"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Donate Now
