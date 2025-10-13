@@ -23,20 +23,20 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About Us", href: "#about" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/#about" },
     {
       name: "Programs",
-      href: "#programs",
+      href: "/#programs",
       dropdown: [
-        { name: "AurSunao", href: "/AurSunao" },
-        { name: "Indradhanush", href: "/Indradhanush" },
-        { name: "Pragya", href: "/Pragya" },
+        { name: "AurSunao", href: "/aursunao" },
+        { name: "Indradhanush", href: "/indradhanush" },
+        { name: "Pragya", href: "/pragya" },
       ],
     },
-    { name: "Impact", href: "#impact" },
-    { name: "Get Involved", href: "#get-involved" },
-    { name: "News", href: "#news" },
+    { name: "Impact", href: "/#impact" },
+    { name: "Get Involved", href: "/#get-involved" },
+    { name: "News", href: "/#news" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -85,13 +85,12 @@ const Navigation = () => {
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
-                  className={`nav-link ${isScrolled ? 'scrolled' : ''}`}
-                >
+                  to={item.href}
+                  className={`nav-link ${isScrolled ? 'scrolled' : ''}`}>
                   {item.name}
-                </a>
+                </Link>
               )
             )}
           </div>
@@ -142,30 +141,27 @@ const Navigation = () => {
                   {openDropdown === item.name && (
                     <div className="pl-4">
                       {item.dropdown.map((dropdownItem) => (
-                        <a
-                          key={dropdownItem.name}
-                          href={dropdownItem.href}
-                          className="block py-1 text-sm hover:bg-primary hover:text-white transition-colors"
-                          onClick={() => {
-                            setIsMobileMenuOpen(false);
-                            setOpenDropdown(null);
-                          }}
-                        >
-                          {dropdownItem.name}
-                        </a>
-                      ))}
+                                                <Link
+                                                  key={dropdownItem.name}
+                                                  to={dropdownItem.href}
+                                                  className="block py-1 text-sm hover:bg-primary hover:text-white transition-colors"
+                                                  onClick={() => {
+                                                    setIsMobileMenuOpen(false);
+                                                    setOpenDropdown(null);
+                                                  }}>
+                                                  {dropdownItem.name}
+                                                </Link>                      ))}
                     </div>
                   )}
                 </div>
               ) : (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="nav-link py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
+                  onClick={() => setIsMobileMenuOpen(false)}>
                   {item.name}
-                </a>
+                </Link>
               )
             )}
 

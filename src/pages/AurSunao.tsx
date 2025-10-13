@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Link } from 'react-router-dom';
 
 const AurSunao: React.FC = () => {
@@ -112,19 +113,7 @@ const AurSunao: React.FC = () => {
         </div>
       </div>
 
-      <div className="section-padding bg-background/95">
-        <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold mb-6">Explore More</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/#home" className="text-lg text-primary hover:underline">Home</Link>
-            <Link to="/#about" className="text-lg text-primary hover:underline">About Us</Link>
-            <Link to="/#impact" className="text-lg text-primary hover:underline">Impact</Link>
-            <Link to="/#get-involved" className="text-lg text-primary hover:underline">Get Involved</Link>
-            <Link to="/#news" className="text-lg text-primary hover:underline">News</Link>
-            <Link to="/contact" className="text-lg text-primary hover:underline">Contact Us</Link>
-          </div>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 };

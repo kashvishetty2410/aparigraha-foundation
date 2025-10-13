@@ -9,6 +9,7 @@ import AurSunao from "./pages/AurSunao";
 import Indradhanush from "./pages/Indradhanush";
 import Pragya from "./pages/Pragya";
 import Contact from "./pages/Contact";
+import Volunteer from "./pages/Volunteer";
 import React, { useLayoutEffect } from "react";
 
 const queryClient = new QueryClient();
@@ -50,6 +51,7 @@ const Layout: React.FC = () => {
         <Route path="/indradhanush" element={<Indradhanush />} />
         <Route path="/pragya" element={<Pragya />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/volunteer" element={<Volunteer />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
