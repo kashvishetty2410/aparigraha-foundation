@@ -124,15 +124,15 @@ const Navigation = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* ✅ Mobile Menu (Spacing Fixed) */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border/30 bg-transparent backdrop-blur-md">
+          <div className="lg:hidden py-4 border-t border-border/30 bg-transparent backdrop-blur-md space-y-1">
             {navItems.map((item) =>
               item.dropdown ? (
                 <div key={item.name} className="relative">
                   <button
                     type="button"
-                    className="nav-link flex items-center space-x-1 w-full py-2 text-purple-600 font-semibold"  // ✅ CHANGED COLOR
+                    className="nav-link flex items-center justify-between w-full py-3 px-3 text-purple-600 font-semibold"
                     onClick={() =>
                       setOpenDropdown((prev) =>
                         prev === item.name ? null : item.name
@@ -140,15 +140,20 @@ const Navigation = () => {
                     }
                   >
                     <span>{item.name}</span>
-                    <ChevronDown className="h-4 w-4 text-purple-600" /> {/* ✅ CHANGED COLOR */}
+                    <ChevronDown
+                      className={`h-4 w-4 text-purple-600 transition-transform duration-300 ${
+                        openDropdown === item.name ? "rotate-180" : ""
+                      }`}
+                    />
                   </button>
+
                   {openDropdown === item.name && (
-                    <div className="pl-4">
+                    <div className="pl-5 pr-3 pb-2 space-y-1">
                       {item.dropdown.map((dropdownItem) => (
                         <a
                           key={dropdownItem.name}
                           href={dropdownItem.href}
-                          className="block py-1 text-sm text-purple-600 hover:text-purple-800 transition-colors" // ✅ CHANGED COLOR
+                          className="block py-2 px-2 text-sm text-purple-600 hover:text-purple-800 transition-colors"
                           onClick={() => {
                             setIsMobileMenuOpen(false);
                             setOpenDropdown(null);
@@ -164,7 +169,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="nav-link py-2 text-purple-600 font-semibold hover:text-purple-800 transition-colors" // ✅ CHANGED COLOR
+                  className="block w-full py-3 px-3 text-purple-600 font-semibold hover:text-purple-800 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -173,7 +178,7 @@ const Navigation = () => {
             )}
 
             {/* Mobile CTA */}
-            <div className="flex flex-col space-y-2 pt-4 border-t border-border/30">
+            <div className="flex flex-col space-y-3 pt-4 mt-2 border-t border-border/30 px-3">
               <Button
                 variant="outline"
                 size="sm"
