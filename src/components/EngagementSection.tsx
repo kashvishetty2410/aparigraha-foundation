@@ -3,26 +3,27 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Users, Building, Calendar, ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const EngagementSection = () => {
   const donationOptions = [
     {
-      amount: "₹2,000",
+      amount: "$25",
       impact: "Provides school supplies for 5 children",
       popular: false
     },
     {
-      amount: "₹5,000",
+      amount: "$50",
       impact: "Funds clean water for a family for 6 months",
       popular: true
     },
     {
-      amount: "₹10,000",
+      amount: "$100",
       impact: "Sponsors a child's education for one semester",
       popular: false
     },
     {
-      amount: "₹50,000",
+      amount: "$250",
       impact: "Builds a well that serves an entire village",
       popular: false
     }
@@ -55,7 +56,7 @@ const EngagementSection = () => {
   const partnershipTiers = [
     {
       title: "Community Partner",
-      amount: "₹25,000+",
+      amount: "$1,000+",
       benefits: [
         "Quarterly impact reports",
         "Recognition on website",
@@ -64,7 +65,7 @@ const EngagementSection = () => {
     },
     {
       title: "Impact Partner",
-      amount: "₹1,00,000+",
+      amount: "$5,000+",
       benefits: [
         "All Community Partner benefits",
         "Site visit opportunity",
@@ -74,7 +75,7 @@ const EngagementSection = () => {
     },
     {
       title: "Transformational Partner",
-      amount: "₹2,50,000+",
+      amount: "$25,000+",
       benefits: [
         "All Impact Partner benefits",
         "Program naming opportunity",
@@ -120,23 +121,24 @@ const EngagementSection = () => {
                   <h4 className="font-semibold mb-4">Choose an amount:</h4>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                     {donationOptions.map((option) => (
-                      <Button
-                        key={option.amount}
-                        variant={option.popular ? "default" : "outline"}
-                        className={`relative flex-col h-auto p-4 text-wrap ${
-                          option.popular ? "ring-2 ring-secondary" : ""
-                        }`}
-                      >
-                        {option.popular && (
-                          <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-secondary text-secondary-foreground">
-                            Popular
-                          </Badge>
-                        )}
-                        <span className="text-lg font-bold">{option.amount}</span>
-                        <span className="text-xs text-center mt-1 opacity-80">
-                          {option.impact}
-                        </span>
-                      </Button>
+                      <Link to="/volunteer" key={option.amount}>
+                        <Button
+                          variant={option.popular ? "default" : "outline"}
+                          className={`relative flex-col h-auto p-4 text-wrap w-full ${
+                            option.popular ? "ring-2 ring-secondary" : ""
+                          }`}
+                        >
+                          {option.popular && (
+                            <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-secondary text-secondary-foreground">
+                              Popular
+                            </Badge>
+                          )}
+                          <span className="text-lg font-bold">{option.amount}</span>
+                          <span className="text-xs text-center mt-1 opacity-80">
+                            {option.impact}
+                          </span>
+                        </Button>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -148,10 +150,12 @@ const EngagementSection = () => {
                     <div className="flex-1">
                       <Input type="number" placeholder="Enter amount" className="text-lg" />
                     </div>
-                    <Button className="btn-hero">
-                      Donate Now
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    <Link to="/volunteer">
+                      <Button className="btn-hero">
+                        Donate Now
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
 
@@ -161,9 +165,11 @@ const EngagementSection = () => {
                   <p className="text-sm text-muted-foreground mb-3">
                     Monthly donations help us plan long-term projects and provide stable support to communities.
                   </p>
-                  <Button variant="outline" size="sm">
-                    Set up Monthly Donation
-                  </Button>
+                  <Link to="/volunteer">
+                    <Button variant="outline" size="sm">
+                      Set up Monthly Donation
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -178,7 +184,7 @@ const EngagementSection = () => {
               <CardContent>
                 <div className="space-y-4">
                   <div className="text-center p-4 bg-primary/5 rounded-lg">
-                    <div className="text-3xl font-bold text-primary mb-2">₹6000</div>
+                    <div className="text-3xl font-bold text-primary mb-2">$50</div>
                     <div className="text-sm text-muted-foreground">Your donation could provide:</div>
                     <ul className="text-sm mt-2 space-y-1">
                       <li>✓ Clean water for 1 family (6 months)</li>
@@ -187,7 +193,7 @@ const EngagementSection = () => {
                     </ul>
                   </div>
                   <div className="text-xs text-muted-foreground text-center">
-                    95% of every single rupee goes directly to the programs
+                    95% of every dollar goes directly to programs
                   </div>
                 </div>
               </CardContent>
@@ -235,9 +241,11 @@ const EngagementSection = () => {
                       ))}
                     </ul>
                   </div>
-                  <Button variant="outline" className="w-full">
-                    Apply to Volunteer
-                  </Button>
+                  <Link to="/volunteer" className="w-full">
+                    <Button variant="outline" className="w-full">
+                      Apply to Volunteer
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -252,7 +260,7 @@ const EngagementSection = () => {
               Corporate & Institutional Partnerships
             </h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Partner with us to align your organization's values with meaningful social impact while also engaging your stakeholders.
+              Partner with us to align your organization's values with meaningful social impact while engaging your stakeholders.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -274,9 +282,11 @@ const EngagementSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" className="w-full">
-                    Become a Partner
-                  </Button>
+                  <Link to="/volunteer" className="w-full">
+                    <Button variant="outline" className="w-full">
+                      Become a Partner
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
