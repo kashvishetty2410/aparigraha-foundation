@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play, ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -19,7 +20,7 @@ const HeroSection = () => {
       <div className="relative z-10 container-custom">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h1 className="hero-title mb-6 fade-in-up">
-            Dedicated to Making a Holistic Difference
+            Dedicated to Making a Holistic Diffrence
             <span className="block text-secondary">in the Quality of Life.</span>
           </h1>
           
@@ -29,10 +30,12 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-up stagger-2">
-            <Button className="bg-[#331452] text-lg px-10 py-5">
-              Donate Now
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/volunteer">
+              <Button className="bg-[#331452] text-lg px-10 py-5">
+                Donate Now
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
             <Button className="bg-[#331452] text-lg px-10 py-5">
               <Play className="mr-2 h-5 w-5" />
               Watch Our Story

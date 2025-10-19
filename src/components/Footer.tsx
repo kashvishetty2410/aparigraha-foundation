@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
@@ -16,21 +17,18 @@ import {
 
 const Footer = () => {
   const quickLinks = [
-    { title: "About Us", href: "#about" },
-    { title: "Our Programs", href: "#programs" },
-    { title: "Impact Reports", href: "#impact" },
-    { title: "Get Involved", href: "#get-involved" },
-    { title: "Latest News", href: "#news" },
-    { title: "Contact Us", href: "#contact" }
+    { title: "About Us", href: "/#about" },
+    { title: "Our Programs", href: "/#programs" },
+    { title: "Impact Reports", href: "/#impact" },
+    { title: "Get Involved", href: "/#get-involved" },
+    { title: "Latest News", href: "/#news" },
+    { title: "Contact Us", href: "/contact" }
   ];
 
   const programs = [
-    { title: "Education Initiative", href: "#education" },
-    { title: "Healthcare Access", href: "#healthcare" },
-    { title: "Community Development", href: "#community" },
-    { title: "Emergency Response", href: "#emergency" },
-    { title: "Women Empowerment", href: "#women" },
-    { title: "Youth Programs", href: "#youth" }
+    { title: "AurSunao", href: "/aursunao" },
+    { title: "Indradhanush", href: "/indradhanush" },
+    { title: "Pragya", href: "/pragya" },
   ];
 
   const policies = [
@@ -136,13 +134,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.title}>
-                  <a
-                    href={link.href}
-                    className="text-primary-foreground/80 hover:text-secondary transition-colors flex items-center group"
-                  >
+                  <Link
+                    to={link.href}
+                    className="text-primary-foreground/80 hover:text-secondary transition-colors flex items-center group">
                     <ArrowRight className="h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {link.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -154,13 +151,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {programs.map((program) => (
                 <li key={program.title}>
-                  <a
-                    href={program.href}
-                    className="text-primary-foreground/80 hover:text-secondary transition-colors flex items-center group"
-                  >
+                  <Link
+                    to={program.href}
+                    className="text-primary-foreground/80 hover:text-secondary transition-colors flex items-center group">
                     <ArrowRight className="h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {program.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -172,13 +168,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {policies.map((policy) => (
                 <li key={policy.title}>
-                  <a
-                    href={policy.href}
-                    className="text-primary-foreground/80 hover:text-secondary transition-colors flex items-center group"
-                  >
+                  <Link
+                    to={policy.href}
+                    className="text-primary-foreground/80 hover:text-secondary transition-colors flex items-center group">
                     <ArrowRight className="h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {policy.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
