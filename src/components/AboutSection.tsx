@@ -1,29 +1,50 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Target, Users, Globe } from "lucide-react";
+
+// Import all SDG images
+import sdg1 from '@/assets/SDG-1.png';
+import sdg2 from '@/assets/SDG-2.png';
+import sdg3 from '@/assets/SDG-3.png';
+import sdg4 from '@/assets/SDG-4.png';
+import sdg5 from '@/assets/SDG-5.png';
+import sdg6 from '@/assets/SDG-6.png';
+import sdg7 from '@/assets/SDG-7.png';
+import sdg8 from '@/assets/SDG-8.png';
+import sdg9 from '@/assets/SDG-9.png';
+import sdg10 from '@/assets/SDG-10.png';
+import sdg11 from '@/assets/SDG-11.png';
+import sdg12 from '@/assets/SDG-12.png';
+import sdg13 from '@/assets/SDG-13.png';
+import sdg14 from '@/assets/SDG-14.png';
+import sdg15 from '@/assets/SDG-15.png';
+import sdg16 from '@/assets/SDG-16.png';
+import sdg17 from '@/assets/SDG-17.png';
+
+const sdgImages = [
+  sdg1, sdg2, sdg3, sdg4, sdg5, sdg6, sdg7, sdg8, sdg9, sdg10,
+  sdg11, sdg12, sdg13, sdg14, sdg15, sdg16, sdg17
+];
+
 
 const AboutSection = () => {
-  const values = [
-    {
-      icon: Heart,
-      title: "Compassion",
-      description: "Every action we take is driven by genuine care and empathy for those we serve."
-    },
-    {
-      icon: Target,
-      title: "Impact Focus",
-      description: "We measure success by the tangible, lasting change we create in communities."
-    },
-    {
-      icon: Users,
-      title: "Collaboration",
-      description: "We believe in the power of partnerships and community-driven solutions."
-    },
-    {
-      icon: Globe,
-      title: "Sustainability",
-      description: "Our programs are designed to create self-sustaining positive change."
-    }
+  const sdgGoals = [
+    { id: 1, title: "No Poverty", description: "End poverty in all its forms everywhere." },
+    { id: 2, title: "Zero Hunger", description: "End hunger, achieve food security and improved nutrition and promote sustainable agriculture." },
+    { id: 3, title: "Good Health and Well-being", description: "Ensure healthy lives and promote well-being for all at all ages." },
+    { id: 4, title: "Quality Education", description: "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all." },
+    { id: 5, title: "Gender Equality", description: "Achieve gender equality and empower all women and girls." },
+    { id: 6, title: "Clean Water and Sanitation", description: "Ensure availability and sustainable management of water and sanitation for all." },
+    { id: 7, title: "Affordable and Clean Energy", description: "Ensure access to affordable, reliable, sustainable and modern energy for all." },
+    { id: 8, title: "Decent Work and Economic Growth", description: "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all." },
+    { id: 9, title: "Industry, Innovation, and Infrastructure", description: "Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation." },
+    { id: 10, title: "Reduced Inequalities", description: "Reduce inequality within and among countries." },
+    { id: 11, title: "Sustainable Cities and Communities", description: "Make cities and human settlements inclusive, safe, resilient and sustainable." },
+    { id: 12, title: "Responsible Consumption and Production", description: "Ensure sustainable consumption and production patterns." },
+    { id: 13, title: "Climate Action", description: "Take urgent action to combat climate change and its impacts." },
+    { id: 14, title: "Life Below Water", description: "Conserve and sustainably use the oceans, seas and marine resources for sustainable development." },
+    { id: 15, title: "Life on Land", description: "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss." },
+    { id: 16, title: "Peace, Justice, and Strong Institutions", description: "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels." },
+    { id: 17, title: "Partnerships for the Goals", description: "Strengthen the means of implementation and revitalize the global partnership for sustainable development." },
   ];
 
   const team = [
@@ -78,16 +99,13 @@ const AboutSection = () => {
 
         {/* Core Values */}
         <div className="mb-20">
-          <h3 className="text-3xl font-bold text-center mb-12">Our Core Values</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <Card key={value.title} className={`program-card fade-in-up stagger-${index + 1}`}>
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <value.icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <h4 className="text-xl font-semibold mb-3">{value.title}</h4>
-                  <p className="text-muted-foreground">{value.description}</p>
+          <h3 className="text-3xl font-bold text-center mb-12">Our Commitment to the SDGs</h3>
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-4">
+            {sdgGoals.map((sdg, index) => (
+              <Card key={sdg.id} className={`bg-white shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg fade-in-up stagger-${index + 1}`}>
+                <CardContent className="p-4 text-center">
+                  <img src={sdgImages[sdg.id - 1]} alt={sdg.title} className="w-24 h-24 mx-auto mb-3" />
+                  <h4 className="text-md font-semibold mb-2">{sdg.title}</h4>
                 </CardContent>
               </Card>
             ))}

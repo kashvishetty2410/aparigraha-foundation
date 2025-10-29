@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -195,10 +196,12 @@ const ProgramsSection = () => {
                   </CardContent>
                 </Card>
 
-                <Button className="btn-hero">
-                  Learn More About {program.title}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <Link to={`/${program.id}`}>
+                  <Button className="btn-hero">
+                    Learn More About {program.title}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
           ))}
