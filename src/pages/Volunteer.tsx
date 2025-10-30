@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -38,18 +37,19 @@ const Volunteer: React.FC = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-  function onSubmit(values: z.infer<typeof formSchema>) {
     // TODO: send to backend; avoid logging PII in production
-    if (import.meta.env.DEV) console.debug("Volunteer form submitted");
+    if (import.meta.env.DEV) console.debug("Volunteer form submitted", values);
   }
 
   return (
-    <div style={{backgroundColor: '#f3d9ea'}}>
+    <div style={{ backgroundColor: '#f3d9ea' }}>
       <Navigation />
       <div className="container-custom section-padding">
         <Card className="max-w-4xl mx-auto">
           <CardHeader>
-            <CardTitle className="text-4xl font-bold text-center gradient-text">Volunteer With Us</CardTitle>
+            <CardTitle className="text-4xl font-bold text-center gradient-text">
+              Volunteer With Us
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-center text-muted-foreground mb-8">
@@ -85,6 +85,7 @@ const Volunteer: React.FC = () => {
                     )}
                   />
                 </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <FormField
                     control={form.control}
@@ -113,6 +114,7 @@ const Volunteer: React.FC = () => {
                     )}
                   />
                 </div>
+
                 <FormField
                   control={form.control}
                   name="reason"
@@ -130,6 +132,7 @@ const Volunteer: React.FC = () => {
                     </FormItem>
                   )}
                 />
+
                 <FormField
                   control={form.control}
                   name="referral"
@@ -154,6 +157,7 @@ const Volunteer: React.FC = () => {
                     </FormItem>
                   )}
                 />
+
                 <FormField
                   control={form.control}
                   name="availability"
@@ -166,32 +170,23 @@ const Volunteer: React.FC = () => {
                             key={day}
                             control={form.control}
                             name="availability"
-                            render={({ field }) => {
-                              return (
-                                <FormItem
-                                  key={day}
-                                  className="flex flex-row items-start space-x-3 space-y-0"
-                                >
-                                  <FormControl>
-                                    <Checkbox
-                                      checked={field.value?.includes(day)}
-                                      onCheckedChange={(checked) => {
-                                        return checked
-                                          ? field.onChange([...field.value, day])
-                                          : field.onChange(
-                                              field.value?.filter(
-                                                (value) => value !== day
-                                              )
-                                            );
-                                      }}
-                                    />
-                                  </FormControl>
-                                  <FormLabel className="font-normal">
-                                    {day}
-                                  </FormLabel>
-                                </FormItem>
-                              );
-                            }}
+                            render={({ field }) => (
+                              <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                                <FormControl>
+                                  <Checkbox
+                                    checked={field.value?.includes(day)}
+                                    onCheckedChange={(checked) => {
+                                      return checked
+                                        ? field.onChange([...field.value, day])
+                                        : field.onChange(
+                                            field.value?.filter((value) => value !== day)
+                                          );
+                                    }}
+                                  />
+                                </FormControl>
+                                <FormLabel className="font-normal">{day}</FormLabel>
+                              </FormItem>
+                            )}
                           />
                         ))}
                       </div>
@@ -199,8 +194,11 @@ const Volunteer: React.FC = () => {
                     </FormItem>
                   )}
                 />
+
                 <div className="text-center">
-                  <Button type="submit" className="btn-hero">Submit Application</Button>
+                  <Button type="submit" className="btn-hero">
+                    Submit Application
+                  </Button>
                 </div>
               </form>
             </Form>
