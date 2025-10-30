@@ -196,12 +196,12 @@ const ProgramsSection = () => {
                   </CardContent>
                 </Card>
 
-                <Link to={`/${program.id}`}>
-                  <Button className="btn-hero">
+                <Button asChild className="btn-hero">
+                  <Link to={`/${program.id}`}>
                     Learn More About {program.title}
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
             </div>
           ))}
