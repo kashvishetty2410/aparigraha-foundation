@@ -77,7 +77,7 @@ const AboutSection = () => {
             About Us
           </Badge>
           <h2 className="text-4xl lg:text-5xl font-bold mb-8 gradient-text">
-            Best Way to live life is "Live and Let Live"
+            The best way to live life is "Live and Let Live"
           </h2>
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 mb-16">
