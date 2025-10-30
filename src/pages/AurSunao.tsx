@@ -19,7 +19,7 @@ const AurSunao: React.FC = () => {
             </div>
             <div>
               <h1 className="hero-title mb-4">AurSunao</h1>
-              <p className="text-xl tnext-white/80 mb-6">
+              <p className="text-xl text-white/80 mb-6">
                 Providing quality education and learning resources to underserved communities.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
