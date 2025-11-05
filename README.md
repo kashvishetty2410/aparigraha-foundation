@@ -1,4 +1,69 @@
-# Aparigraha Foundation Project
+# Aparigraha Foundation Website
+
+This is the official website for Aparigraha Foundation, built with React, TypeScript, and Vite.
+
+## Development Setup
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Docker Deployment
+
+This project includes Docker configuration for easy deployment.
+
+### Building the Docker Image
+
+```bash
+docker build -t aparigraha-foundation .
+```
+
+### Running with Docker
+
+```bash
+docker run -d -p 80:80 --name aparigraha-app aparigraha-foundation
+```
+
+### Running with Docker Compose
+
+```bash
+docker-compose up -d
+```
+
+## CI/CD Pipeline
+
+The project includes GitHub Actions workflows for:
+1. Building and testing the application
+2. Deploying to production (manual trigger)
+
+### Setting up CI/CD
+
+To enable the deployment workflow, you need to configure the following secrets in your GitHub repository:
+- `DOCKER_USERNAME` - Your Docker Hub username
+- `DOCKER_PASSWORD` - Your Docker Hub password
+- `HOST` - Your server's IP address or hostname
+- `USERNAME` - SSH username for your server
+- `PRIVATE_KEY` - SSH private key for accessing your server
+
+## Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+- `VITE_RAZORPAY_KEY_ID` - Your Razorpay key ID
+- `VITE_RAZORPAY_KEY_SECRET` - Your Razorpay key secret
+
+## Available Scripts
+
+- `npm run dev` - Start the development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build for development
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview the production build
 
 ## How can I contribute to this project?
 
