@@ -94,6 +94,43 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Razorpay Integration
+
+This project includes a complete donation system integrated with Razorpay for processing one-time and recurring payments.
+
+### Features
+
+- One-time donations
+- Recurring donations (AutoPay)
+- Secure payment processing
+- Responsive donation modal
+- Subscription management
+
+### Frontend Components
+
+- `src/components/DonationModal.tsx` - Main donation interface
+- `src/lib/razorpay.ts` - Razorpay service integration
+- Integrated into HeroSection, Navigation, and Footer components
+
+### Backend (in `backend/` directory)
+
+- Webhook handling for payment notifications
+- Subscription management
+- Security verification for webhook requests
+
+### Setup
+
+1. Create a Razorpay account at <https://razorpay.com>
+2. Obtain your API keys from the Razorpay dashboard
+3. Add your keys to the `.env` file:
+
+   ```
+   RAZORPAY_KEY_ID=your_key_id_here
+   RAZORPAY_KEY_SECRET=your_key_secret_here
+   ```
+
+4. Configure webhooks in your Razorpay dashboard to point to your server endpoint
+
 ## How can I deploy this project?
 
 You can build and deploy this project using the standard deployment process for Vite applications.

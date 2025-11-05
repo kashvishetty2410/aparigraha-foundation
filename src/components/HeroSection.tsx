@@ -1,8 +1,13 @@
-import { Button } from "@/components/ui/button";
-import { Play, ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
+import DonationModal from "@/components/DonationModal";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Heart, Play } from "lucide-react";
+import { useState } from "react";
 
 const HeroSection = () => {
+  const [showDonationModal, setShowDonationModal] = useState(false);
+  const [showRecurringModal, setShowRecurringModal] = useState(false);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -29,9 +34,12 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-up stagger-2">
-            <Button className="bg-[#331452] text-lg px-10 py-5">
+            <Button 
+              className="bg-[#331452] text-lg px-10 py-5"
+              onClick={() => setShowDonationModal(true)}
+            >
               Donate Now
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <Heart className="ml-2 h-5 w-5" />
             </Button>
             <Button className="bg-[#331452] text-lg px-10 py-5">
               <Play className="mr-2 h-5 w-5" />
@@ -63,6 +71,19 @@ const HeroSection = () => {
 
       {/* Scroll Indicator */}
       
+      <DonationModal 
+        open={showDonationModal} 
+        onClose={() => setShowDonationModal(false)} 
+        initialAmount={100}
+        isRecurring={false}
+      />
+      
+      <DonationModal 
+        open={showRecurringModal} 
+        onClose={() => setShowRecurringModal(false)} 
+        initialAmount={50}
+        isRecurring={true}
+      />
     </section>
   );
 };

@@ -1,17 +1,20 @@
-import { useState, useEffect } from "react";
+import DonationModal from "@/components/DonationModal";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ChevronDown, Heart, Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [showDonationModal, setShowDonationModal] = useState(false);
+  const [showRecurringModal, setShowRecurringModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -100,7 +103,12 @@ const Navigation = () => {
             <Button className="btn-tprimary">
               Volunteer
             </Button>
-            <Button className="btn-hero">Donate Now</Button>
+            <div className="flex space-x-2">
+              <Button className="btn-hero" onClick={() => setShowDonationModal(true)}>
+                <Heart className="mr-2 h-4 w-4" />
+                Donate
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -175,16 +183,45 @@ const Navigation = () => {
               >
                 Volunteer
               </Button>
-              <Button
-                className="btn-hero"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Donate Now
-              </Button>
+              <div className="flex space-x-2">
+                <Button
+                  className="btn-hero flex-1"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setShowDonationModal(true);
+                  }}
+                >
+                  <Heart className="mr-2 h-4 w-4" />
+                  Donate
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setShowRecurringModal(true);
+                  }}
+                >
+                  AutoPay
+                </Button>
+              </div>
             </div>
           </div>
         )}
       </div>
+      
+      <DonationModal 
+        open={showDonationModal} 
+        onClose={() => setShowDonationModal(false)} 
+        initialAmount={100}
+        isRecurring={false}
+      />
+      
+      <DonationModal 
+        open={showRecurringModal} 
+        onClose={() => setShowRecurringModal(false)} 
+        initialAmount={50}
+        isRecurring={true}
+      />
     </nav>
   );
 };

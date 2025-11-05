@@ -1,12 +1,61 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import communityImage from "@/assets/community-impact.jpg";
+import educationImage from "@/assets/education-impact.jpg";
+import ProgramDetail from "@/components/ProgramDetail";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Home, Heart, ArrowRight, Users, Target, TrendingUp } from "lucide-react";
-import educationImage from "@/assets/education-impact.jpg";
-import communityImage from "@/assets/community-impact.jpg";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  ArrowRight,
+  BookOpen,
+  ChevronDown,
+  Heart,
+  Home,
+  Target,
+  TrendingUp,
+  Users
+} from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+// Define the program type
+interface Program {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  icon: React.ElementType;
+  stats: {
+    beneficiaries: string;
+    [key: string]: string;
+  };
+  objectives: string[];
+  testimonial: {
+    quote: string;
+    author: string;
+  };
+  impact: {
+    title: string;
+    description: string;
+    image: string;
+  };
+  getInvolved: {
+    title: string;
+    steps: {
+      step: string;
+      title: string;
+      description: string;
+    }[];
+  };
+}
 
 const ProgramsSection = () => {
-  const programs = [
+  const programs: Program[] = [
     {
       id: "aursunao",
       title: "AurSunao",
@@ -27,6 +76,31 @@ const ProgramsSection = () => {
       testimonial: {
         quote: "Thanks to the scholarship program, I was able to complete my nursing degree and now serve my community as a healthcare worker.",
         author: "Maria Santos, Scholarship Recipient"
+      },
+      impact: {
+        title: "Transforming Education",
+        description: "Our education program has built 150 schools and trained over 2,000 teachers, reaching more than 25,000 students across rural communities. We've awarded 5,000+ scholarships to deserving students, with 85% going on to higher education.",
+        image: educationImage
+      },
+      getInvolved: {
+        title: "Ways to Get Involved",
+        steps: [
+          {
+            step: "1",
+            title: "Donate",
+            description: "Support our education initiatives with a financial contribution to help us expand our reach."
+          },
+          {
+            step: "2",
+            title: "Volunteer",
+            description: "Join our team of volunteers and make a direct impact in communities through teaching and mentoring."
+          },
+          {
+            step: "3",
+            title: "Partner",
+            description: "Collaborate with us to amplify our impact through strategic partnerships and resource sharing."
+          }
+        ]
       }
     },
     {
@@ -49,6 +123,31 @@ const ProgramsSection = () => {
       testimonial: {
         quote: "The clean water project transformed our village. Children no longer get sick from contaminated water, and women can focus on other activities.",
         author: "James Mukasa, Community Leader"
+      },
+      impact: {
+        title: "Building Sustainable Communities",
+        description: "Our community development program has completed over 300 projects, creating 2,500 jobs and benefiting more than 100,000 people. We've built clean water systems, improved sanitation, and supported local businesses through microfinance initiatives.",
+        image: communityImage
+      },
+      getInvolved: {
+        title: "Ways to Get Involved",
+        steps: [
+          {
+            step: "1",
+            title: "Donate",
+            description: "Support our community development projects with a financial contribution."
+          },
+          {
+            step: "2",
+            title: "Volunteer",
+            description: "Join our team of volunteers and make a direct impact in communities through construction and development work."
+          },
+          {
+            step: "3",
+            title: "Partner",
+            description: "Collaborate with us to amplify our impact through strategic partnerships and resource sharing."
+          }
+        ]
       }
     },
     {
@@ -71,6 +170,31 @@ const ProgramsSection = () => {
       testimonial: {
         quote: "The mobile clinic brings hope to our remote area. My daughter received life-saving treatment that wasn't available before.",
         author: "Grace Achieng, Mother of Patient"
+      },
+      impact: {
+        title: "Bringing Healthcare to Remote Areas",
+        description: "Our healthcare program has established 50 mobile clinics, trained 200 healthcare professionals, and provided medical care to over 75,000 people in remote areas. We've implemented preventive health programs that have reduced disease incidence by 40% in our service areas.",
+        image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop"
+      },
+      getInvolved: {
+        title: "Ways to Get Involved",
+        steps: [
+          {
+            step: "1",
+            title: "Donate",
+            description: "Support our healthcare initiatives with a financial contribution to help us expand our reach."
+          },
+          {
+            step: "2",
+            title: "Volunteer",
+            description: "Join our team of volunteers and make a direct impact in communities through healthcare services."
+          },
+          {
+            step: "3",
+            title: "Partner",
+            description: "Collaborate with us to amplify our impact through strategic partnerships and resource sharing."
+          }
+        ]
       }
     }
   ];
@@ -108,6 +232,27 @@ const ProgramsSection = () => {
             Through our comprehensive programs, we address the root causes of poverty 
             and inequality while building sustainable pathways to prosperity.
           </p>
+          
+          {/* Program Dropdown */}
+          <div className="mt-8">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="bg-background">
+                  Jump to a Program
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center">
+                {programs.map((program) => (
+                  <DropdownMenuItem key={program.id} asChild>
+                    <Link to={`/program/${program.id}`} className="w-full">
+                      {program.title}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
 
         {/* Process Flow */}
@@ -195,9 +340,14 @@ const ProgramsSection = () => {
                   </CardContent>
                 </Card>
 
-                <Button className="btn-hero">
-                  Learn More About {program.title}
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                <Button 
+                  className="btn-hero"
+                  asChild
+                >
+                  <Link to={`/program/${program.id}`}>
+                    Learn More About {program.title}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </div>
             </div>

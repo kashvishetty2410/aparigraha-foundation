@@ -1,11 +1,12 @@
-import Navigation from "@/components/Navigation";
-import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import ProgramsSection from "@/components/ProgramsSection";
-import ImpactSection from "@/components/ImpactSection";
+import ContactSection from "@/components/ContactSection";
 import EngagementSection from "@/components/EngagementSection";
-import NewsSection from "@/components/NewsSection";
 import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import ImpactSection from "@/components/ImpactSection";
+import Navigation from "@/components/Navigation";
+import NewsSection from "@/components/NewsSection";
+import ProgramsSection from "@/components/ProgramsSection";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
           <ImpactSection />
           <EngagementSection />
           <NewsSection />
+          <ContactSection />
         </div>
       </main>
       

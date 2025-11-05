@@ -1,20 +1,31 @@
+import ContactForm from "@/components/ContactForm";
+import DonationModal from "@/components/DonationModal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Linkedin, 
-  Youtube, 
-  Mail, 
-  Phone, 
-  MapPin, 
+import { useToast } from "@/hooks/use-toast";
+import {
+  ArrowRight,
+  Facebook,
   Heart,
-  ArrowRight
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+  Youtube
 } from "lucide-react";
+import { useState } from "react";
 
 const Footer = () => {
+  const [showDonationModal, setShowDonationModal] = useState(false);
+  const [showRecurringModal, setShowRecurringModal] = useState(false);
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const { toast } = useToast();
+
   const quickLinks = [
     { title: "About Us", href: "#about" },
     { title: "Our Programs", href: "#programs" },
@@ -50,6 +61,57 @@ const Footer = () => {
     { icon: Youtube, href: "#", label: "YouTube" }
   ];
 
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email) {
+      toast({
+        title: "Email Required",
+        description: "Please enter your email address to subscribe.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Simple email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubscribing(true);
+    
+    try {
+      // In a real implementation, you would send this to your backend
+      console.log("Subscribing email:", email);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      toast({
+        title: "Subscribed!",
+        description: "Thank you for subscribing to our newsletter.",
+      });
+      
+      // Reset email field
+      setEmail("");
+    } catch (error) {
+      console.error("Subscription error:", error);
+      toast({
+        title: "Subscription Failed",
+        description: "There was an issue subscribing. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
+
   return (
     <footer className="bg-primary text-primary-foreground">
       {/* Newsletter Section */}
@@ -62,17 +124,24 @@ const Footer = () => {
             <p className="text-primary-foreground/80 mb-8 text-lg">
               Get monthly updates on our programs, success stories, and ways to get involved.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <Input 
                 type="email" 
                 placeholder="Enter your email address"
                 className="bg-white/10 border-white/20 text-primary-foreground placeholder:text-primary-foreground/60 focus:bg-white/20"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={isSubscribing}
               />
-              <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                Subscribe
+              <Button 
+                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground"
+                type="submit"
+                disabled={isSubscribing}
+              >
+                {isSubscribing ? "Subscribing..." : "Subscribe"}
                 <Mail className="ml-2 h-4 w-4" />
               </Button>
-            </div>
+            </form>
             <p className="text-xs text-primary-foreground/60 mt-3">
               We respect your privacy. Unsubscribe at any time.
             </p>
@@ -96,6 +165,24 @@ const Footer = () => {
               and development programs that create lasting positive change.
             </p>
             
+            {/* Donate Buttons */}
+            <div className="flex flex-col gap-2 mb-6">
+              <Button 
+                className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground"
+                onClick={() => setShowDonationModal(true)}
+              >
+                <Heart className="mr-2 h-4 w-4" />
+                Donate Now
+              </Button>
+              <Button 
+                variant="outline" 
+                className="w-full border-secondary text-secondary-dark hover:bg-secondary/10"
+                onClick={() => setShowRecurringModal(true)}
+              >
+                Setup AutoPay
+              </Button>
+            </div>
+            
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
@@ -111,7 +198,13 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-secondary" />
-                <span className="text-sm">info@hopefoundation.org</span>
+                <Button 
+                  variant="link" 
+                  className="text-sm p-0 h-auto text-secondary-foreground hover:text-secondary"
+                  onClick={() => setShowContactForm(true)}
+                >
+                  info@hopefoundation.org
+                </Button>
               </div>
             </div>
 
@@ -209,6 +302,25 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      
+      <DonationModal 
+        open={showDonationModal} 
+        onClose={() => setShowDonationModal(false)} 
+        initialAmount={100}
+        isRecurring={false}
+      />
+      
+      <DonationModal 
+        open={showRecurringModal} 
+        onClose={() => setShowRecurringModal(false)} 
+        initialAmount={50}
+        isRecurring={true}
+      />
+      
+      <ContactForm 
+        open={showContactForm}
+        onClose={() => setShowContactForm(false)}
+      />
     </footer>
   );
 };
