@@ -176,7 +176,7 @@ const Footer = () => {
               </Button>
               <Button 
                 variant="outline" 
-                className="w-full border-secondary text-secondary-dark hover:bg-secondary/10"
+                className="w-full border-secondary text-secondary-foreground hover:bg-secondary/10"
                 onClick={() => setShowRecurringModal(true)}
               >
                 Setup AutoPay
