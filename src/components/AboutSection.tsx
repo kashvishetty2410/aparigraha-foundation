@@ -97,20 +97,31 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Core Values */}
-        <div className="mb-20">
-          <h3 className="text-3xl font-bold text-center mb-12">Our Commitment to the SDGs</h3>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-4">
-            {sdgGoals.map((sdg, index) => (
-              <Card key={sdg.id} className={`bg-white shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg fade-in-up stagger-${index + 1}`}>
-                <CardContent className="p-4 text-center">
-                  <img src={sdgImages[sdg.id - 1]} alt={sdg.title} className="w-24 h-24 mx-auto mb-3" />
-                  <h4 className="text-md font-semibold mb-2">{sdg.title}</h4>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+       {/* Core Values */}
+      <div className="mb-20">
+      <h3 className="text-3xl font-bold text-center mb-12">Our Commitment to the SDGs</h3>
+
+
+      <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
+      {sdgGoals.map((sdg, index) => (
+      <Card
+        key={sdg.id}
+        className="w-48 bg-white shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg"
+      >
+        <CardContent className="p-5 text-center">
+          <img
+            src={sdgImages[sdg.id - 1]}
+            alt={sdg.title}
+            className="w-28 h-28 mx-auto mb-4"
+          />
+          <h4 className="text-lg font-semibold mb-2">{sdg.title}</h4>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</div>
+
+
 
         {/* Leadership Team */}
         <div>

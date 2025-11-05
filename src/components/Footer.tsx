@@ -41,11 +41,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Youtube, href: "#", label: "YouTube" }
+    { icon: Facebook, href: "https://www.facebook.com/groups/aparigrahafoundation/", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/aparigrahafoundation/", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/aparigraha-foundation/", label: "LinkedIn" },
+    { icon: Youtube, href: "https://www.youtube.com/@aparigrahafoundation9966/", label: "YouTube" }
   ];
 
   return (
