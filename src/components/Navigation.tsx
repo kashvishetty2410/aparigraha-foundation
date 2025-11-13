@@ -7,6 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown, Heart, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Navigation = () => {
@@ -31,12 +32,11 @@ const Navigation = () => {
       name: "Programs",
       href: "#programs",
       dropdown: [
-        { name: "AurSunao", href: "#aursunao" },
-        { name: "Indradhanush", href: "#indradhanush" },
-        { name: "Pragya", href: "#pragya" },
+        { name: "AurSunao", href: "/program/aursunao" },
+        { name: "Indradhanush", href: "/program/indradhanush" },
+        { name: "Pragya", href: "/program/pragya" },
       ],
     },
-    { name: "Impact", href: "#impact" },
     { name: "Get Involved", href: "#get-involved" },
     { name: "Contact", href: "#contact" },
   ];
@@ -75,12 +75,12 @@ const Navigation = () => {
                         key={dropdownItem.name}
                         className="hover:bg-primary hover:text-white transition-colors focus:bg-primary focus:text-white"
                       >
-                        <a
-                          href={dropdownItem.href}
+                        <Link
+                          to={dropdownItem.href}
                           className="w-full block px-2 py-1"
                         >
                           {dropdownItem.name}
-                        </a>
+                        </Link>
                       </DropdownMenuItem>
                     ))}
                   </DropdownMenuContent>
@@ -146,17 +146,17 @@ const Navigation = () => {
                   {openDropdown === item.name && (
                     <div className="pl-4">
                       {item.dropdown.map((dropdownItem) => (
-                        <a
+                        <Link
                           key={dropdownItem.name}
-                          href={dropdownItem.href}
-                          className="block py-1 text-sm hover:bg-primary hover:text-white transition-colors"
+                          to={dropdownItem.href}
+                          className="block py-1 text-sm text-primary hover:bg-primary hover:text-white transition-colors"
                           onClick={() => {
                             setIsMobileMenuOpen(false);
                             setOpenDropdown(null);
                           }}
                         >
                           {dropdownItem.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}
