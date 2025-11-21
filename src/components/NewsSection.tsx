@@ -160,7 +160,7 @@ export default function NewsSection() {
                 Front Line Warriors – Special Episode
               </h4>
               <div className="flex justify-between text-xs text-muted-foreground">
-                <span>June 03, 2021</span>
+                <span>Jun 03 2021</span>
               </div>
             </CardContent>
           </Card>
