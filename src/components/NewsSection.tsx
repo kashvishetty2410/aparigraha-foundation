@@ -19,6 +19,7 @@ export default function NewsSection() {
 
         {/* ----------- ALL TAB ----------- */}
         <TabsContent value="all" className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
           {/* Existing 3 YouTube Videos */}
           <Card className="program-card cursor-pointer hover:shadow-medium transition-all duration-300">
             <div className="relative">
@@ -30,9 +31,7 @@ export default function NewsSection() {
               ></iframe>
             </div>
             <CardContent className="p-4">
-              <Badge variant="secondary" className="mb-2 text-xs">
-                Video
-              </Badge>
+              <Badge variant="secondary" className="mb-2 text-xs">Video</Badge>
               <h4 className="font-medium text-sm mb-1">
                 Story of Front line Warrior Series - Episode 1 - Dr Bindal Vala
               </h4>
@@ -52,9 +51,7 @@ export default function NewsSection() {
               ></iframe>
             </div>
             <CardContent className="p-4">
-              <Badge variant="secondary" className="mb-2 text-xs">
-                Video
-              </Badge>
+              <Badge variant="secondary" className="mb-2 text-xs">Video</Badge>
               <h4 className="font-medium text-sm mb-1">
                 Story of Front Line Warriors Series - Episode 2 - ACP Avinash Dharmadhikari
               </h4>
@@ -74,9 +71,7 @@ export default function NewsSection() {
               ></iframe>
             </div>
             <CardContent className="p-4">
-              <Badge variant="secondary" className="mb-2 text-xs">
-                Video
-              </Badge>
+              <Badge variant="secondary" className="mb-2 text-xs">Video</Badge>
               <h4 className="font-medium text-sm mb-1">
                 Story of Front Line Warriors Series - Episode 3 - K K Rana
               </h4>
@@ -86,7 +81,7 @@ export default function NewsSection() {
             </CardContent>
           </Card>
 
-          {/* ----------- New 3 YouTube Videos ----------- */}
+          {/* ----------- New Original 3 Videos ----------- */}
 
           <Card className="program-card cursor-pointer hover:shadow-medium transition-all duration-300">
             <div className="relative">
@@ -98,9 +93,7 @@ export default function NewsSection() {
               ></iframe>
             </div>
             <CardContent className="p-4">
-              <Badge variant="secondary" className="mb-2 text-xs">
-                Video
-              </Badge>
+              <Badge variant="secondary" className="mb-2 text-xs">Video</Badge>
               <h4 className="font-medium text-sm mb-1">
                 Story of Front Line Warriors Series - Episode 4 - Himanshu Sharma
               </h4>
@@ -120,9 +113,7 @@ export default function NewsSection() {
               ></iframe>
             </div>
             <CardContent className="p-4">
-              <Badge variant="secondary" className="mb-2 text-xs">
-                Video
-              </Badge>
+              <Badge variant="secondary" className="mb-2 text-xs">Video</Badge>
               <h4 className="font-medium text-sm mb-1">
                 Story of Front Line Warriors Series - Episode 5 - Dr. Kunal P. Shah
               </h4>
@@ -142,9 +133,7 @@ export default function NewsSection() {
               ></iframe>
             </div>
             <CardContent className="p-4">
-              <Badge variant="secondary" className="mb-2 text-xs">
-                Video
-              </Badge>
+              <Badge variant="secondary" className="mb-2 text-xs">Video</Badge>
               <h4 className="font-medium text-sm mb-1">
                 Story of Front Line Warriors Series - Episode 6 - Col. Venkat Raman (Retd.)
               </h4>
@@ -153,18 +142,42 @@ export default function NewsSection() {
               </div>
             </CardContent>
           </Card>
+
+          {/* ----------- NEW VIDEO YOU PROVIDED ----------- */}
+
+          <Card className="program-card cursor-pointer hover:shadow-medium transition-all duration-300">
+            <div className="relative">
+              <iframe
+                className="w-full h-48 object-cover rounded-t-lg"
+                src="https://www.youtube.com/embed/V2kSRnb6ioc"
+                title="Front Line Warriors – Special Episode"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <CardContent className="p-4">
+              <Badge variant="secondary" className="mb-2 text-xs">Video</Badge>
+              <h4 className="font-medium text-sm mb-1">
+                Front Line Warriors – Special Episode
+              </h4>
+              <div className="flex justify-between text-xs text-muted-foreground">
+                <span>June 03, 2021</span>
+              </div>
+            </CardContent>
+          </Card>
+
         </TabsContent>
 
         {/* ----------- VIDEOS TAB ----------- */}
         <TabsContent value="videos" className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Reuse the same 6 videos */}
-          {[ 
+          
+          {[
             "https://www.youtube.com/embed/Edg4oS5Gni0",
             "https://www.youtube.com/embed/x7lEcmqcjPU",
             "https://www.youtube.com/embed/7dgTMtKWCa4",
             "https://www.youtube.com/embed/P67vzbc0C28",
             "https://www.youtube.com/embed/fJt4i09Zu2E",
-            "https://www.youtube.com/embed/uiWi0EPo5oM"
+            "https://www.youtube.com/embed/uiWi0EPo5oM",
+            "https://www.youtube.com/embed/V2kSRnb6ioc" // NEW VIDEO
           ].map((src, index) => (
             <Card key={index} className="program-card cursor-pointer hover:shadow-medium transition-all duration-300">
               <div className="relative">
@@ -176,35 +189,26 @@ export default function NewsSection() {
                 ></iframe>
               </div>
               <CardContent className="p-4">
-                <Badge variant="secondary" className="mb-2 text-xs">
-                  Video
-                </Badge>
+                <Badge variant="secondary" className="mb-2 text-xs">Video</Badge>
                 <h4 className="font-medium text-sm mb-1">
                   Story of Front Line Warriors Series - Episode {index + 1}
                 </h4>
               </CardContent>
             </Card>
           ))}
+
         </TabsContent>
 
         {/* ----------- IMAGES TAB ----------- */}
         <TabsContent value="images" className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Two image sections only */}
           <Card className="overflow-hidden">
-            <img
-              src="/images/gallery1.jpg"
-              alt="Gallery 1"
-              className="w-full h-64 object-cover"
-            />
+            <img src="/images/gallery1.jpg" alt="Gallery 1" className="w-full h-64 object-cover" />
           </Card>
           <Card className="overflow-hidden">
-            <img
-              src="/images/gallery2.jpg"
-              alt="Gallery 2"
-              className="w-full h-64 object-cover"
-            />
+            <img src="/images/gallery2.jpg" alt="Gallery 2" className="w-full h-64 object-cover" />
           </Card>
         </TabsContent>
+
       </Tabs>
     </section>
   );
