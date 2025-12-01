@@ -49,34 +49,16 @@ const AboutSection = () => {
 
   const team = [
     {
-      name: "Dr. Sarah Johnson",
-      role: "Executive Director",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
-      bio: "15+ years in international development, PhD in Public Health from Harvard."
-    },
-    {
-      name: "Michael Chen",
-      role: "Program Director",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      bio: "Former UN field coordinator with expertise in community development programs."
-    },
-    {
-      name: "Amara Okafor",
-      role: "Field Operations Manager",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
-      bio: "Local community leader with 10+ years experience in grassroots organizing."
-    },
-    {
       name: "Dr. Amita Jain",
       role: "President",
       image: "/images/team/amita.jpg",
-      bio: "Transformational Education Leader transitioning into Institutional Admission Strategy and Enrollment Management, bringing 30+ years of experience in governance, academic operations, and international partnerships. Demonstrated expertise in policy design, data-driven student recruitment, candidate evaluation, and stakeholder engagement. Adept at leveraging technology, analytics, and cross-cultural collaboration to enhance institutional growth and student diversity. Deeply committed to philanthropic educational initiatives, including expanding access for underrepresented learners, championing equity-driven admission practices, and supporting community-based programs that uplift marginalized student groups."
+      bio: "Transformational education leader with 30+ years in governance, academic operations and international partnerships. Focused on inclusive student recruitment and community-driven educational programs."
     },
     {
       name: "Ms. Geeta Jain",
       role: "Secretary",
       image: "/images/team/geeta.jpg",
-      bio: "A purpose-driven woman entrepreneur, she blends business leadership with a deep commitment to social impact. Passionate about designing and executing high-pressure project timelines, she brings precision, creativity, and resilience to every initiative she leads. Beyond her entrepreneurial work, she champions philanthropic causes—supporting education, women’s empowerment, and community development—ensuring that every project she undertakes contributes to meaningful and sustainable change."
+      bio: "Entrepreneur and social-impact leader experienced in project delivery, women’s empowerment and community development."
     }
   ];
 
@@ -127,7 +109,7 @@ const AboutSection = () => {
         {/* Leadership Team */}
         <div>
           <h3 className="text-3xl font-bold text-center mb-12">Our Leadership Team</h3>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 justify-items-center">
             {team.map((member, index) => (
               <Card key={member.name} className={`impact-card text-center fade-in-up stagger-${index + 1}`}>
                 <CardContent className="p-6">

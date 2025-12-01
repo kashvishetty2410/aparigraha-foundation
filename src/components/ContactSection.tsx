@@ -137,7 +137,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg">{info.title}</h3>
-                      <p className="text-primary font-medium">{info.content}</p>
+                      <p className="text-sm text-primary font-medium">{info.content}</p>
                       <p className="text-sm text-muted-foreground">{info.description}</p>
                     </div>
                   </div>

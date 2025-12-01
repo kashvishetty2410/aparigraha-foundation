@@ -62,7 +62,7 @@ const ProgramsSection = () => {
       image: educationImage,
       icon: BookOpen,
       stats: {
-        beneficiaries: "25,000+",
+        beneficiaries: "25 K+",
         schools: "150",
         graduates: "5,000+"
       },
@@ -78,7 +78,7 @@ const ProgramsSection = () => {
       },
       impact: {
         title: "Transforming Education",
-        description: "Our education program has built 150 schools and trained over 2,000 teachers, reaching more than 25,000 students across rural communities. We've awarded 5,000+ scholarships to deserving students, with 85% going on to higher education.",
+        description: "Our education program has built 150 schools and trained over 2,000 teachers, reaching more than 25 K+ students across rural communities. We've awarded 5,000+ scholarships to deserving students, with 85% going on to higher education.",
         image: educationImage
       },
       getInvolved: {
@@ -239,7 +239,7 @@ const ProgramsSection = () => {
       stats: {
         beneficiaries: "100,000+",
         projects: "300",
-        jobs: "2,000+"
+        jobs: "2 K+"
       },
       objectives: [
         "Develop clean water and sanitation systems",
@@ -253,7 +253,7 @@ const ProgramsSection = () => {
       },
       impact: {
         title: "Building Sustainable Communities",
-        description: "Our community development program has completed over 300 projects, creating 2,000+ jobs and benefiting more than 100,000 people. We've built clean water systems, improved sanitation, and supported local businesses through microfinance initiatives. Till date 12,000+ entries from across Indian states (Indradhanush creative entries).",
+        description: "Our community development program has completed over 300 projects, creating 2 K+ jobs and benefiting more than 100,000 people. We've built clean water systems, improved sanitation, and supported local businesses through microfinance initiatives. Till date 12,000+ entries from across Indian states (Indradhanush creative entries).",
         image: communityImage
       },
       getInvolved: {
@@ -284,7 +284,7 @@ const ProgramsSection = () => {
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
       icon: Heart,
       stats: {
-        beneficiaries: "7,500+",
+        beneficiaries: "7.5 K+",
         clinics: "50",
         professionals: "200"
       },
@@ -302,7 +302,7 @@ const ProgramsSection = () => {
       },
       impact: {
         title: "Bringing Healthcare to Remote Areas",
-        description: "Our healthcare program has established 50 mobile clinics, trained 200 healthcare professionals, and provided medical care to over 7,500 people in remote areas. We've implemented preventive health programs that have reduced disease incidence by 40% in our service areas.",
+        description: "Our healthcare program has established 50 mobile clinics, trained 200 healthcare professionals, and provided medical care to over 7.5 K+ people in remote areas. We've implemented preventive health programs that have reduced disease incidence by 40% in our service areas.",
         image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop"
       },
       getInvolved: {
