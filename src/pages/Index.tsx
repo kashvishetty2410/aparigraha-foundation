@@ -3,9 +3,8 @@ import ContactSection from "@/components/ContactSection";
 import EngagementSection from "@/components/EngagementSection";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import ImpactSection from "@/components/ImpactSection";
 import Navigation from "@/components/Navigation";
-import NewsSection from "@/components/NewsSection";
+import NewsSection from "@/components/NewsSection";  // ← ADD THIS LINE
 import ProgramsSection from "@/components/ProgramsSection";
 
 const Index = () => {
@@ -20,9 +19,8 @@ const Index = () => {
           <HeroSection />
           <AboutSection />
           <ProgramsSection />
-          <ImpactSection />
-          <EngagementSection />
           <NewsSection />
+          <EngagementSection />
           <ContactSection />
         </div>
       </main>

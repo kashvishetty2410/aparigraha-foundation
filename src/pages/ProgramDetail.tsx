@@ -51,11 +51,6 @@ const ProgramDetail = () => {
         quote: "Thanks to the scholarship program, I was able to complete my nursing degree and now serve my community as a healthcare worker.",
         author: "Maria Santos, Scholarship Recipient"
       },
-      impact: {
-        title: "Transforming Education",
-        description: "Our education program has built 150 schools and trained over 2,000 teachers, reaching more than 25,000 students across rural communities. We've awarded 5,000+ scholarships to deserving students, with 85% going on to higher education.",
-        image: educationImage
-      },
       getInvolved: {
         title: "Ways to Get Involved",
         steps: [
@@ -98,11 +93,14 @@ const ProgramDetail = () => {
         quote: "The clean water project transformed our village. Children no longer get sick from contaminated water, and women can focus on other activities.",
         author: "James Mukasa, Community Leader"
       },
+<<<<<<< HEAD
       impact: {
         title: "Building Sustainable Communities",
         description: "Our community development program has completed over 300 projects, creating 2 K+ jobs and benefiting more than 100,000 people. We've built clean water systems, improved sanitation, and supported local businesses through microfinance initiatives.",
         image: communityImage
       },
+=======
+>>>>>>> b639f864bb8508a8d2df0e2ebe7f4d61e4fb1a97
       getInvolved: {
         title: "Ways to Get Involved",
         steps: [
@@ -145,11 +143,14 @@ const ProgramDetail = () => {
         quote: "The mobile clinic brings hope to our remote area. My daughter received life-saving treatment that wasn't available before.",
         author: "Grace Achieng, Mother of Patient"
       },
+<<<<<<< HEAD
       impact: {
         title: "Bringing Healthcare to Remote Areas",
         description: "Our healthcare program has established 50 mobile clinics, trained 200 healthcare professionals, and provided medical care to over 7.5 K+ people in remote areas. We've implemented preventive health programs that have reduced disease incidence by 40% in our service areas.",
         image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop"
       },
+=======
+>>>>>>> b639f864bb8508a8d2df0e2ebe7f4d61e4fb1a97
       getInvolved: {
         title: "Ways to Get Involved",
         steps: [
@@ -239,7 +240,7 @@ const ProgramDetail = () => {
           <div className="lg:col-span-2 space-y-12">
             {/* Stats */}
             <div>
-              <h2 className="text-2xl font-bold mb-6">Program Impact</h2>
+              <h2 className="text-2xl font-bold mb-6">Program Overview</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {Object.entries(program.stats).map(([key, value]) => (
                   <div key={key} className="text-center p-4 bg-muted rounded-lg">
@@ -280,26 +281,6 @@ const ProgramDetail = () => {
                     </p>
                   </CardContent>
                 </Card>
-              </div>
-            </div>
-
-            {/* Impact */}
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Program Impact</h3>
-              <div className="flex flex-col md:flex-row gap-6">
-                <div className="md:w-1/3">
-                  <img
-                    src={program.impact?.image || program.image}
-                    alt="Program impact"
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                </div>
-                <div className="md:w-2/3">
-                  <h4 className="text-lg font-medium mb-2">{program.impact?.title || "Transforming Lives"}</h4>
-                  <p className="text-muted-foreground">
-                    {program.impact?.description || "Our program has made a significant impact in the communities we serve, providing essential resources and opportunities for growth and development."}
-                  </p>
-                </div>
               </div>
             </div>
 
