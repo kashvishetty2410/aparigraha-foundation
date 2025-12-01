@@ -65,6 +65,18 @@ const AboutSection = () => {
       role: "Field Operations Manager",
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
       bio: "Local community leader with 10+ years experience in grassroots organizing."
+    },
+    {
+      name: "Dr. Amita Jain",
+      role: "President",
+      image: "/images/team/amita.jpg",
+      bio: "Transformational Education Leader transitioning into Institutional Admission Strategy and Enrollment Management, bringing 30+ years of experience in governance, academic operations, and international partnerships. Demonstrated expertise in policy design, data-driven student recruitment, candidate evaluation, and stakeholder engagement. Adept at leveraging technology, analytics, and cross-cultural collaboration to enhance institutional growth and student diversity. Deeply committed to philanthropic educational initiatives, including expanding access for underrepresented learners, championing equity-driven admission practices, and supporting community-based programs that uplift marginalized student groups."
+    },
+    {
+      name: "Ms. Geeta Jain",
+      role: "Secretary",
+      image: "/images/team/geeta.jpg",
+      bio: "A purpose-driven woman entrepreneur, she blends business leadership with a deep commitment to social impact. Passionate about designing and executing high-pressure project timelines, she brings precision, creativity, and resilience to every initiative she leads. Beyond her entrepreneurial work, she champions philanthropic causes—supporting education, women’s empowerment, and community development—ensuring that every project she undertakes contributes to meaningful and sustainable change."
     }
   ];
 

@@ -25,7 +25,7 @@ const Indradhanush: React.FC = () => {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 <div className="impact-card text-center bg-white/10 backdrop-blur-sm">
-                    <p className="counter text-secondary flex justify-center">10,000+</p>
+                  <p className="counter text-secondary flex justify-center">12,000+</p>
                     <p className="text-white/80 flex justify-center">Children Engaged</p>
                 </div>
                 <div className="impact-card text-center bg-white/10 backdrop-blur-sm">
@@ -93,6 +93,15 @@ const Indradhanush: React.FC = () => {
         <div className="container-custom">
           <h2 className="text-4xl font-bold text-center mb-12"><span className="gradient-text">Upcoming Initiatives</span></h2>
           <div className="max-w-2xl mx-auto">
+            <div className="bg-white/5 rounded-lg p-6 mb-6">
+              <h4 className="text-lg font-semibold mb-2">Participation — Quick Entry Steps</h4>
+              <ol className="list-decimal list-inside text-muted-foreground space-y-2">
+                <li>Register on the program page with basic participant details.</li>
+                <li>Prepare your creative entry according to category rules and submit online.</li>
+                <li>Include consent & contact details; winners announced on our official channels.</li>
+              </ol>
+              <p className="text-sm text-muted-foreground mt-3">Till date 12,000+ entries from across Indian states.</p>
+            </div>
             <ul className="list-disc list-inside text-lg text-muted-foreground space-y-4">
               <li>
                 <strong>Theatre for Social Change:</strong> We are launching a series of theatre workshops to raise awareness about social issues and empower children to become agents of change in their communities.

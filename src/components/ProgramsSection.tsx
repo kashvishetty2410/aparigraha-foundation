@@ -58,7 +58,7 @@ const ProgramsSection = () => {
     {
       id: "aursunao",
       title: "AurSunao",
-      description: "Providing quality education and learning resources to underserved communities.",
+      description: "An open platform to reach experts for good health and well being. Free counselling support platform offering confidential counselling helplines for those in emotional distress; trained listeners and mental-health professionals available. Also supports education initiatives and resources.",
       image: educationImage,
       icon: BookOpen,
       stats: {
@@ -103,6 +103,134 @@ const ProgramsSection = () => {
       }
     },
     {
+      id: "mealtoheal",
+      title: "#MealtoHeal",
+      description: "Weekly Food Drive carried out at various cities across India for the needy. Meals distributed at various shelter homes and care clinics for sick and elderly. Volunteers prepare age-appropriate nutritive meals per medical requirements.",
+      image: "/images/programs/mealtoheal.jpg",
+      icon: ArrowRight,
+      stats: {
+        meals: "150,000+"
+      },
+      objectives: [
+        "Mobilize volunteers for food preparation and distribution",
+        "Coordinate with shelter homes and care clinics for targeted delivery",
+        "Ensure dietary needs are met for elderly and sick beneficiaries"
+      ],
+      testimonial: {
+        quote: "Our volunteers make and distribute nutritious meals to those who need them most.",
+        author: "Volunteer Coordinator"
+      },
+      impact: {
+        title: "Feeding Hope",
+        description: "Over 150,000 meals distributed across Indian states.",
+        image: "/images/programs/mealtoheal.jpg"
+      },
+      getInvolved: {
+        title: "Ways to Get Involved",
+        steps: [
+          { step: "1", title: "Donate", description: "Contribute to meal preparation and logistics." },
+          { step: "2", title: "Volunteer", description: "Help prepare and distribute meals at local drives." },
+          { step: "3", title: "Partner", description: "Collaborate with local organizations for wider reach." }
+        ]
+      }
+    },
+    {
+      id: "gowiththeflow",
+      title: "#GoWithTheFlow",
+      description: "Sanitary Pad Drive Donation and menstrual hygiene education. Objective to provide sanitary pad kits and education PAN India; note distribution to remand homes.",
+      image: "/images/programs/gowiththeflow.jpg",
+      icon: Target,
+      stats: {
+        beneficiaries: "—"
+      },
+      objectives: [
+        "Provide sanitary pad kits and hygiene education across India",
+        "Partner with schools, NGOs, and remand homes for distribution",
+        "Train volunteers to deliver menstrual health workshops"
+      ],
+      testimonial: {
+        quote: "Menstrual hygiene drives improve dignity and health outcomes for young women.",
+        author: "Program Lead"
+      },
+      impact: {
+        title: "Sanitary Access",
+        description: "Distribution of sanitary kits and menstrual hygiene education across remand homes and communities.",
+        image: "/images/programs/gowiththeflow.jpg"
+      },
+      getInvolved: {
+        title: "Ways to Get Involved",
+        steps: [
+          { step: "1", title: "Donate", description: "Support sanitary pad kit procurement and distribution." },
+          { step: "2", title: "Volunteer", description: "Help run hygiene education sessions." },
+          { step: "3", title: "Partner", description: "Work with us to scale education and distribution." }
+        ]
+      }
+    },
+    {
+      id: "rootforo2",
+      title: "#RootForO2",
+      description: "Plantation drives across states, especially post-disasters.",
+      image: "/images/programs/rootforO2.jpg",
+      icon: Home,
+      stats: {
+        saplings: "100,000+"
+      },
+      objectives: [
+        "Organize large-scale plantation events across districts",
+        "Engage local communities and volunteers for maintenance",
+        "Focus on disaster-affected areas for reforestation"
+      ],
+      testimonial: {
+        quote: "Plantation drives help restore ecological balance and community resilience.",
+        author: "Environmental Coordinator"
+      },
+      impact: {
+        title: "Greening Our Future",
+        description: "Planted over 100,000 saplings.",
+        image: "/images/programs/rootforO2.jpg"
+      },
+      getInvolved: {
+        title: "Ways to Get Involved",
+        steps: [
+          { step: "1", title: "Donate", description: "Support sapling procurement and on-ground logistics." },
+          { step: "2", title: "Volunteer", description: "Join local plantation drives and support maintenance." },
+          { step: "3", title: "Partner", description: "Collaborate on large-scale restoration projects." }
+        ]
+      }
+    },
+    {
+      id: "storyoffrontline",
+      title: "#StoryofFrontLineWarriorsSeries",
+      description: "FB Live with frontline warriors; Frontline Warriors During COVID-19",
+      image: "/images/programs/storyoffrontline.jpg",
+      icon: Users,
+      stats: {
+        sessions: "—"
+      },
+      objectives: [
+        "Host live sessions with frontline workers",
+        "Showcase frontline stories and resilience",
+        "Encourage community dialogue and support"
+      ],
+      testimonial: {
+        quote: "Highlighting the efforts of frontline workers during crises.",
+        author: "Program Coordinator"
+      },
+      impact: {
+        title: "Frontline Stories",
+        description: "Frontline Warriors During COVID-19",
+        image: "/images/programs/storyoffrontline.jpg"
+      },
+      getInvolved: {
+        title: "Ways to Get Involved",
+        steps: [
+          { step: "1", title: "Attend", description: "Join live sessions and share insights." },
+          { step: "2", title: "Share", description: "Spread frontline stories across your network." },
+          { step: "3", title: "Support", description: "Support frontline initiatives through donations and advocacy." }
+        ]
+      }
+    },
+    {
       id: "indradhanush",
       title: "Indradhanush",
       description: "Empowering communities through infrastructure and economic development projects.",
@@ -111,7 +239,7 @@ const ProgramsSection = () => {
       stats: {
         beneficiaries: "100,000+",
         projects: "300",
-        jobs: "2,500"
+        jobs: "2,000+"
       },
       objectives: [
         "Develop clean water and sanitation systems",
@@ -125,7 +253,7 @@ const ProgramsSection = () => {
       },
       impact: {
         title: "Building Sustainable Communities",
-        description: "Our community development program has completed over 300 projects, creating 2,500 jobs and benefiting more than 100,000 people. We've built clean water systems, improved sanitation, and supported local businesses through microfinance initiatives.",
+        description: "Our community development program has completed over 300 projects, creating 2,000+ jobs and benefiting more than 100,000 people. We've built clean water systems, improved sanitation, and supported local businesses through microfinance initiatives. Till date 12,000+ entries from across Indian states (Indradhanush creative entries).",
         image: communityImage
       },
       getInvolved: {
@@ -156,7 +284,7 @@ const ProgramsSection = () => {
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
       icon: Heart,
       stats: {
-        beneficiaries: "75,000+",
+        beneficiaries: "7,500+",
         clinics: "50",
         professionals: "200"
       },
@@ -164,7 +292,9 @@ const ProgramsSection = () => {
         "Establish mobile health clinics",
         "Train community health workers",
         "Provide essential medicines and equipment",
-        "Implement preventive health programs"
+        "Implement preventive health programs",
+        "Teacher & student skill-building: Canvas, Google for Education, Google Level 1/2",
+        "Classroom pedagogy: Values, NEP 2020, AI in the classroom, career guidance"
       ],
       testimonial: {
         quote: "The mobile clinic brings hope to our remote area. My daughter received life-saving treatment that wasn't available before.",
@@ -172,7 +302,7 @@ const ProgramsSection = () => {
       },
       impact: {
         title: "Bringing Healthcare to Remote Areas",
-        description: "Our healthcare program has established 50 mobile clinics, trained 200 healthcare professionals, and provided medical care to over 75,000 people in remote areas. We've implemented preventive health programs that have reduced disease incidence by 40% in our service areas.",
+        description: "Our healthcare program has established 50 mobile clinics, trained 200 healthcare professionals, and provided medical care to over 7,500 people in remote areas. We've implemented preventive health programs that have reduced disease incidence by 40% in our service areas.",
         image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop"
       },
       getInvolved: {

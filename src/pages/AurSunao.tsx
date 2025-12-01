@@ -20,7 +20,7 @@ const AurSunao: React.FC = () => {
             <div>
               <h1 className="hero-title mb-4">AurSunao</h1>
               <p className="text-xl text-white/80 mb-6">
-                Providing quality education and learning resources to underserved communities.
+                An open platform to reach experts for Good Health and Well Being. Introducing our free counselling support platform offering confidential counselling helplines for those in emotional distress; trained listeners and mental-health professionals available.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 <div className="impact-card text-center bg-white/10 backdrop-blur-sm">
@@ -63,8 +63,14 @@ const AurSunao: React.FC = () => {
         <div className="container-custom">
           <h2 className="text-4xl font-bold text-center mb-12"><span className="gradient-text">Our Mission</span></h2>
           <p className="text-lg text-center max-w-4xl mx-auto text-muted-foreground">
-            At AurSunao, we believe that every child deserves access to quality education, regardless of their background or circumstances. Our mission is to empower underserved communities by building a sustainable ecosystem of learning and growth. We work hand-in-hand with local partners to create safe, inclusive, and stimulating learning environments where children can thrive and realize their full potential. By focusing on holistic development, we aim to break the cycle of poverty and create a future where every voice is heard.
+            At AurSunao, we provide both educational support and a confidential helpline to promote mental health and well-being. Our mission is to increase access to trained listeners and mental health professionals for those seeking emotional support while continuing to deliver education resources to underserved communities.
           </p>
+
+          <div className="mt-8 bg-white/5 p-6 rounded-lg max-w-2xl mx-auto text-left">
+            <h4 className="font-semibold mb-2">Confidential Counselling Helpline</h4>
+            <p className="text-sm text-muted-foreground mb-2">Free confidential helpline support for emotional distress — trained listeners and mental-health professionals are available for confidential calls and online counselling.</p>
+            <p className="text-sm text-muted-foreground">Helpline details and timings are available on our contact page.</p>
+          </div>
         </div>
       </div>
 

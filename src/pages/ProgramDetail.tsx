@@ -86,7 +86,7 @@ const ProgramDetail = () => {
       stats: {
         beneficiaries: "100,000+",
         projects: "300",
-        jobs: "2,500"
+        jobs: "2,000+"
       },
       objectives: [
         "Develop clean water and sanitation systems",
@@ -100,7 +100,7 @@ const ProgramDetail = () => {
       },
       impact: {
         title: "Building Sustainable Communities",
-        description: "Our community development program has completed over 300 projects, creating 2,500 jobs and benefiting more than 100,000 people. We've built clean water systems, improved sanitation, and supported local businesses through microfinance initiatives.",
+        description: "Our community development program has completed over 300 projects, creating 2,000+ jobs and benefiting more than 100,000 people. We've built clean water systems, improved sanitation, and supported local businesses through microfinance initiatives.",
         image: communityImage
       },
       getInvolved: {
@@ -131,7 +131,7 @@ const ProgramDetail = () => {
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
       icon: Heart,
       stats: {
-        beneficiaries: "75,000+",
+        beneficiaries: "7,500+",
         clinics: "50",
         professionals: "200"
       },
@@ -147,7 +147,7 @@ const ProgramDetail = () => {
       },
       impact: {
         title: "Bringing Healthcare to Remote Areas",
-        description: "Our healthcare program has established 50 mobile clinics, trained 200 healthcare professionals, and provided medical care to over 75,000 people in remote areas. We've implemented preventive health programs that have reduced disease incidence by 40% in our service areas.",
+        description: "Our healthcare program has established 50 mobile clinics, trained 200 healthcare professionals, and provided medical care to over 7,500 people in remote areas. We've implemented preventive health programs that have reduced disease incidence by 40% in our service areas.",
         image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop"
       },
       getInvolved: {

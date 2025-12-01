@@ -21,43 +21,43 @@ const ImpactSection = () => {
   const impactStats = [
     {
       icon: Users,
-      number: "500,000+",
-      label: "Lives Transformed",
+      number: "3,00,000+",
+      label: "Lives transformed",
       description: "Individuals directly impacted by our programs across 45 countries",
       color: "text-primary"
     },
     {
       icon: GraduationCap,
-      number: "25,000",
-      label: "Students Educated",
+      number: "25,000+",
+      label: "Students educated",
       description: "Children and adults provided with quality education opportunities",
       color: "text-secondary"
     },
     {
       icon: Heart,
-      number: "75,000",
-      label: "Healthcare Recipients",
+      number: "7,500+",
+      label: "Healthcare",
       description: "People who received medical care through our health programs",
       color: "text-accent"
     },
     {
       icon: Home,
-      number: "10,000",
-      label: "Homes Built",
+      number: "3,000+",
+      label: "Plants planted",
       description: "Families provided with safe, sustainable housing solutions",
       color: "text-primary"
     },
     {
       icon: TrendingUp,
-      number: "2,500",
+      number: "2,000+",
       label: "Jobs Created",
       description: "Employment opportunities generated through our development programs",
       color: "text-secondary"
     },
     {
       icon: Globe,
-      number: "45",
-      label: "Countries Served",
+      number: "45+",
+      label: "Countries Connected",
       description: "Nations where we've implemented successful development projects",
       color: "text-accent"
     }

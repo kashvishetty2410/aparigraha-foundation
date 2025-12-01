@@ -36,20 +36,20 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Call Us",
-      content: "+91 98765 43210",
-      description: "Mon-Fri from 9AM to 5PM IST"
+      content: "9136356135 / 9152016555",
+      description: "Available MONDAY to Sunday 10:00 am to 8:00 pm"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "1234 Hope Street",
-      description: "Mumbai, Maharashtra 400001"
+      content: "(to be added later)",
+      description: ""
     },
     {
       icon: Clock,
       title: "Office Hours",
-      content: "Monday - Friday",
-      description: "9:00 AM - 5:00 PM IST"
+      content: "MONDAY to Sunday 10:00 am to 8:00 pm",
+      description: ""
     }
   ];
 

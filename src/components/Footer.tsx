@@ -11,6 +11,7 @@ import {
   Instagram,
   Linkedin,
   Mail,
+  Calendar,
   MapPin,
   Phone,
   Twitter,
@@ -183,28 +184,25 @@ const Footer = () => {
               </Button>
             </div>
             
-            {/* Contact Info */}
+            {/* Contact Info - updated per Aparigraha email */}
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-secondary mt-0.5" />
+                <Phone className="h-5 w-5 text-secondary mt-0.5" />
                 <div className="text-sm">
-                  <p>1234 Hope Street</p>
-                  <p>New York, NY 10001</p>
+                  <p>Contact us - 9136356135 / 9152016555</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-secondary" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <Mail className="h-5 w-5 text-secondary" />
+                <span className="text-sm">Email - info@aparigrahafoundation.org</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-secondary" />
-                <Button 
-                  variant="link" 
-                  className="text-sm p-0 h-auto text-secondary-foreground hover:text-secondary"
-                  onClick={() => setShowContactForm(true)}
-                >
-                  info@hopefoundation.org
-                </Button>
+                <MapPin className="h-5 w-5 text-secondary" />
+                <span className="text-sm">Visit us - (to be added later)</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="h-5 w-5 text-secondary" />
+                <span className="text-sm">Office hours - MONDAY to Sunday 10:00 am to 8:00 pm</span>
               </div>
             </div>
 
