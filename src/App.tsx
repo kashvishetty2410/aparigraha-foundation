@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ProgramDetail from "./pages/ProgramDetail";
+import Volunteer from "./pages/Volunteer";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,7 @@ const Layout: React.FC = () => {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/program/:programId" element={<ProgramDetail />} />
+        <Route path="/volunteer" element={<Volunteer />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

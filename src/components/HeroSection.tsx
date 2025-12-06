@@ -12,7 +12,7 @@ const HeroSection = () => {
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <img 
+        <img
           src={heroImage}
           alt="Aparigraha Foundation making impact in communities"
           className="w-full h-full object-cover"
@@ -27,24 +27,26 @@ const HeroSection = () => {
             Dedicated to Making a Holistic Difference
             <span className="block text-secondary">in the Quality of Life.</span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed fade-in-up stagger-1">
-            Together, we're building sustainable solutions that create lasting change 
+            Together, we're building sustainable solutions that create lasting change
             in education, healthcare, and community development across the globe.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-up stagger-2">
-            <Button 
+            <Button
               className="bg-[#331452] text-lg px-10 py-5"
               onClick={() => setShowDonationModal(true)}
             >
               Donate Now
               <Heart className="ml-2 h-5 w-5" />
             </Button>
-            <Button className="bg-[#331452] text-lg px-10 py-5">
-              <Play className="mr-2 h-5 w-5" />
-              Watch Our Story
-            </Button>
+            <a href="https://youtu.be/Edg4oS5Gni0?si=DWcN2LAXOy8BcXuS" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-[#331452] text-lg px-10 py-5">
+                <Play className="mr-2 h-5 w-5" />
+                Watch Our Story
+              </Button>
+            </a>
           </div>
 
           {/* Impact Stats */}
@@ -70,17 +72,17 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      
-      <DonationModal 
-        open={showDonationModal} 
-        onClose={() => setShowDonationModal(false)} 
+
+      <DonationModal
+        open={showDonationModal}
+        onClose={() => setShowDonationModal(false)}
         initialAmount={100}
         isRecurring={false}
       />
-      
-      <DonationModal 
-        open={showRecurringModal} 
-        onClose={() => setShowRecurringModal(false)} 
+
+      <DonationModal
+        open={showRecurringModal}
+        onClose={() => setShowRecurringModal(false)}
         initialAmount={50}
         isRecurring={true}
       />

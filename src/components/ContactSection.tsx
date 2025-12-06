@@ -4,11 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
-   Select,
-   SelectContent,
-   SelectItem,
-   SelectTrigger,
-   SelectValue,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
@@ -30,26 +30,30 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email Us",
-      content: "info@aparigrahafoundation.org",
-      description: "We'll respond within 24 hours"
+      content: "info@aparigrahafoundation.com",
+      description: "We'll respond within 24 hours",
+      link: null
     },
     {
       icon: Phone,
       title: "Call Us",
-      content: "9136356135 / 9152016555",
-      description: "Available MONDAY to Sunday 10:00 am to 8:00 pm"
+      content: "+91 91363 56135",
+      description: "",
+      link: null
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "(to be added later)",
-      description: ""
+      content: "33, Ground Floor, Citi Mall, Oshiwara Link Road, Andheri (W), Mumbai - 400053, Maharashtra, India",
+      description: "",
+      link: "https://www.google.com/maps/search/?api=1&query=33+Ground+Floor+Citi+Mall+Oshiwara+Link+Road+Andheri+West+Mumbai+400053"
     },
     {
       icon: Clock,
       title: "Office Hours",
-      content: "MONDAY to Sunday 10:00 am to 8:00 pm",
-      description: ""
+      content: "Monday to Sunday 10:00 am to 8:00 pm",
+      description: "",
+      link: null
     }
   ];
 
@@ -62,7 +66,7 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.subject) {
       toast({
         title: "Missing Information",
@@ -73,19 +77,19 @@ const ContactSection = () => {
     }
 
     setIsLoading(true);
-    
+
     try {
       // In a real application, you would send this data to your backend
       console.log("Contact form submitted:", formData);
-      
+
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       toast({
         title: "Message Sent!",
         description: "Thank you for contacting us. We'll get back to you soon.",
       });
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -117,7 +121,7 @@ const ContactSection = () => {
             Contact Us
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Have questions, feedback, or want to get involved? We'd love to hear from you. 
+            Have questions, feedback, or want to get involved? We'd love to hear from you.
             Reach out through any of the channels below or use our contact form.
           </p>
         </div>
@@ -137,8 +141,21 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg">{info.title}</h3>
-                      <p className="text-sm text-primary font-medium">{info.content}</p>
-                      <p className="text-sm text-muted-foreground">{info.description}</p>
+                      {info.link ? (
+                        <a
+                          href={info.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-primary font-medium hover:underline"
+                        >
+                          {info.content}
+                        </a>
+                      ) : (
+                        <p className="text-sm text-primary font-medium">{info.content}</p>
+                      )}
+                      {info.description && (
+                        <p className="text-sm text-muted-foreground">{info.description}</p>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -165,7 +182,7 @@ const ContactSection = () => {
                         required
                       />
                     </div>
-                    
+
                     <div className="space-y-2">
                       <Label htmlFor="email">Email *</Label>
                       <Input
@@ -178,7 +195,7 @@ const ContactSection = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone</Label>
                     <Input
@@ -189,7 +206,7 @@ const ContactSection = () => {
                       placeholder="e.g. +91 98765 43210"
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject *</Label>
                     <Select onValueChange={(value) => handleInputChange('subject', value)} value={formData.subject}>
@@ -207,7 +224,7 @@ const ContactSection = () => {
                       </SelectContent>
                     </Select>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
                     <Textarea
@@ -219,10 +236,10 @@ const ContactSection = () => {
                       required
                     />
                   </div>
-                  
-                  <Button 
-                    className="btn-hero w-full" 
-                    type="submit" 
+
+                  <Button
+                    className="btn-hero w-full"
+                    type="submit"
                     disabled={isLoading}
                   >
                     {isLoading ? "Sending..." : "Send Message"}

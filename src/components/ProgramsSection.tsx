@@ -30,8 +30,8 @@ interface Program {
   image: string;
   icon: React.ElementType;
   stats: {
-    beneficiaries: string;
-    [key: string]: string;
+    beneficiaries?: string;
+    [key: string]: string | undefined;
   };
   objectives: string[];
   testimonial: {
@@ -104,7 +104,7 @@ const ProgramsSection = () => {
     },
     {
       id: "mealtoheal",
-      title: "#MealtoHeal",
+      title: "Meal To Heal",
       description: "Weekly Food Drive carried out at various cities across India for the needy. Meals distributed at various shelter homes and care clinics for sick and elderly. Volunteers prepare age-appropriate nutritive meals per medical requirements.",
       image: "/images/programs/mealtoheal.jpg",
       icon: ArrowRight,
@@ -136,7 +136,7 @@ const ProgramsSection = () => {
     },
     {
       id: "gowiththeflow",
-      title: "#GoWithTheFlow",
+      title: "Go With The Flow",
       description: "Sanitary Pad Drive Donation and menstrual hygiene education. Objective to provide sanitary pad kits and education PAN India; note distribution to remand homes.",
       image: "/images/programs/gowiththeflow.jpg",
       icon: Target,
@@ -168,7 +168,7 @@ const ProgramsSection = () => {
     },
     {
       id: "rootforo2",
-      title: "#RootForO2",
+      title: "Root For O2",
       description: "Plantation drives across states, especially post-disasters.",
       image: "/images/programs/rootforO2.jpg",
       icon: Home,
@@ -200,7 +200,7 @@ const ProgramsSection = () => {
     },
     {
       id: "storyoffrontline",
-      title: "#StoryofFrontLineWarriorsSeries",
+      title: "Story of FrontLine Warriors",
       description: "FB Live with frontline warriors; Frontline Warriors During COVID-19",
       image: "/images/programs/storyoffrontline.jpg",
       icon: Users,
@@ -358,10 +358,10 @@ const ProgramsSection = () => {
             Core Programs & Initiatives
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Through our comprehensive programs, we address the root causes of poverty 
+            Through our comprehensive programs, we address the root causes of poverty
             and inequality while building sustainable pathways to prosperity.
           </p>
-          
+
           {/* Program Dropdown */}
           <div className="mt-8">
             <DropdownMenu>
@@ -408,9 +408,8 @@ const ProgramsSection = () => {
         {/* Programs Grid */}
         <div className="space-y-20">
           {programs.map((program, index) => (
-            <div key={program.id} className={`grid lg:grid-cols-2 gap-12 items-center ${
-              index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-            }`}>
+            <div key={program.id} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+              }`}>
               {/* Image */}
               <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''} fade-in-up`}>
                 <img
@@ -428,7 +427,7 @@ const ProgramsSection = () => {
                   </div>
                   <h3 className="text-3xl font-bold">{program.title}</h3>
                 </div>
-                
+
                 <p className="text-lg text-muted-foreground mb-6">{program.description}</p>
 
                 {/* Stats */}
@@ -457,19 +456,7 @@ const ProgramsSection = () => {
                   </ul>
                 </div>
 
-                {/* Testimonial */}
-                <Card className="bg-primary/5 border-primary/20 mb-6">
-                  <CardContent className="p-6">
-                    <p className="text-sm text-muted-foreground mb-3 italic">
-                      "{program.testimonial.quote}"
-                    </p>
-                    <p className="text-sm font-medium text-primary">
-                      — {program.testimonial.author}
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Button 
+                <Button
                   className="btn-hero"
                   asChild
                 >

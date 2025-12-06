@@ -14,7 +14,6 @@ import {
   Calendar,
   MapPin,
   Phone,
-  Twitter,
   Youtube
 } from "lucide-react";
 import { useState } from "react";
@@ -55,16 +54,15 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Youtube, href: "#", label: "YouTube" }
+    { icon: Youtube, href: "https://www.youtube.com/@aparigrahafoundation9966/featured", label: "YouTube" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/74165852/admin/dashboard/", label: "LinkedIn" },
+    { icon: Instagram, href: "https://www.instagram.com/aparigrahafoundation/?hl=en", label: "Instagram" },
+    { icon: Facebook, href: "https://www.facebook.com/groups/aparigrahafoundation/posts/493054418681698/", label: "Facebook" }
   ];
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       toast({
         title: "Email Required",
@@ -86,19 +84,19 @@ const Footer = () => {
     }
 
     setIsSubscribing(true);
-    
+
     try {
       // In a real implementation, you would send this to your backend
       console.log("Subscribing email:", email);
-      
+
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       toast({
         title: "Subscribed!",
         description: "Thank you for subscribing to our newsletter.",
       });
-      
+
       // Reset email field
       setEmail("");
     } catch (error) {
@@ -126,15 +124,15 @@ const Footer = () => {
               Get monthly updates on our programs, success stories, and ways to get involved.
             </p>
             <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input 
-                type="email" 
+              <Input
+                type="email"
                 placeholder="Enter your email address"
                 className="bg-white/10 border-white/20 text-primary-foreground placeholder:text-primary-foreground/60 focus:bg-white/20"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={isSubscribing}
               />
-              <Button 
+              <Button
                 className="bg-secondary hover:bg-secondary/90 text-secondary-foreground"
                 type="submit"
                 disabled={isSubscribing}
@@ -162,47 +160,54 @@ const Footer = () => {
               <span className="text-2xl font-bold">Aparigraha Foundation</span>
             </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-              Empowering communities worldwide through sustainable education, healthcare, 
+              Empowering communities worldwide through sustainable education, healthcare,
               and development programs that create lasting positive change.
             </p>
-            
+
             {/* Donate Buttons */}
             <div className="flex flex-col gap-2 mb-6">
-              <Button 
+              <Button
                 className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground"
                 onClick={() => setShowDonationModal(true)}
               >
                 <Heart className="mr-2 h-4 w-4" />
                 Donate Now
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="w-full border-secondary text-secondary-dark hover:bg-secondary/10"
                 onClick={() => setShowRecurringModal(true)}
               >
                 Setup AutoPay
               </Button>
             </div>
-            
+
             {/* Contact Info - updated per Aparigraha email */}
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-secondary mt-0.5" />
                 <div className="text-sm">
-                  <p>Contact us - 9136356135 / 9152016555</p>
+                  <p>Contact us - +91 91363 56135</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-secondary" />
-                <span className="text-sm">Email - info@aparigrahafoundation.org</span>
+                <span className="text-sm">Email - info@aparigrahafoundation.com</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-secondary" />
-                <span className="text-sm">Visit us - (to be added later)</span>
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-5 w-5 text-secondary mt-0.5" />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=33+Ground+Floor+Citi+Mall+Oshiwara+Link+Road+Andheri+West+Mumbai+400053"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm hover:underline"
+                >
+                  33, Ground Floor, Citi Mall, Oshiwara Link Road, Andheri (W), Mumbai - 400053
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Calendar className="h-5 w-5 text-secondary" />
-                <span className="text-sm">Office hours - MONDAY to Sunday 10:00 am to 8:00 pm</span>
+                <span className="text-sm">Office hours - Monday to Sunday 10:00 am to 8:00 pm</span>
               </div>
             </div>
 
@@ -212,6 +217,8 @@ const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/10 hover:bg-secondary rounded-lg flex items-center justify-center transition-colors"
                   aria-label={social.label}
                 >
@@ -300,22 +307,22 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      
-      <DonationModal 
-        open={showDonationModal} 
-        onClose={() => setShowDonationModal(false)} 
+
+      <DonationModal
+        open={showDonationModal}
+        onClose={() => setShowDonationModal(false)}
         initialAmount={100}
         isRecurring={false}
       />
-      
-      <DonationModal 
-        open={showRecurringModal} 
-        onClose={() => setShowRecurringModal(false)} 
+
+      <DonationModal
+        open={showRecurringModal}
+        onClose={() => setShowRecurringModal(false)}
         initialAmount={50}
         isRecurring={true}
       />
-      
-      <ContactForm 
+
+      <ContactForm
         open={showContactForm}
         onClose={() => setShowContactForm(false)}
       />

@@ -33,6 +33,10 @@ const Navigation = () => {
       href: "#programs",
       dropdown: [
         { name: "AurSunao", href: "/program/aursunao" },
+        { name: "Meal To Heal", href: "/program/mealtoheal" },
+        { name: "Go With The Flow", href: "/program/gowiththeflow" },
+        { name: "Root For O2", href: "/program/rootforo2" },
+        { name: "Story of FrontLine Warriors", href: "/program/storyoffrontline" },
         { name: "Indradhanush", href: "/program/indradhanush" },
         { name: "Pragya", href: "/program/pragya" },
       ],
@@ -43,14 +47,13 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-soft border-b border-border/50"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-background/95 backdrop-blur-md shadow-soft border-b border-border/50"
+        : "bg-transparent"
+        }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-12 lg:h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img
@@ -99,9 +102,11 @@ const Navigation = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button className="btn-tprimary">
-              Volunteer
-            </Button>
+            <Link to="/volunteer">
+              <Button className="btn-tprimary">
+                Volunteer
+              </Button>
+            </Link>
             <div className="flex space-x-2">
               <Button className="btn-hero" onClick={() => setShowDonationModal(true)}>
                 <Heart className="mr-2 h-4 w-4" />
@@ -175,13 +180,15 @@ const Navigation = () => {
 
             {/* Mobile CTA */}
             <div className="flex flex-col space-y-2 pt-4 border-t border-border/30">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Volunteer
-              </Button>
+              <Link to="/volunteer" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full"
+                >
+                  Volunteer
+                </Button>
+              </Link>
               <div className="flex space-x-2">
                 <Button
                   className="btn-hero flex-1"
@@ -207,17 +214,17 @@ const Navigation = () => {
           </div>
         )}
       </div>
-      
-      <DonationModal 
-        open={showDonationModal} 
-        onClose={() => setShowDonationModal(false)} 
+
+      <DonationModal
+        open={showDonationModal}
+        onClose={() => setShowDonationModal(false)}
         initialAmount={100}
         isRecurring={false}
       />
-      
-      <DonationModal 
-        open={showRecurringModal} 
-        onClose={() => setShowRecurringModal(false)} 
+
+      <DonationModal
+        open={showRecurringModal}
+        onClose={() => setShowRecurringModal(false)}
         initialAmount={50}
         isRecurring={true}
       />
