@@ -93,14 +93,11 @@ const ProgramDetail = () => {
         quote: "The clean water project transformed our village. Children no longer get sick from contaminated water, and women can focus on other activities.",
         author: "James Mukasa, Community Leader"
       },
-<<<<<<< HEAD
       impact: {
         title: "Building Sustainable Communities",
         description: "Our community development program has completed over 300 projects, creating 2 K+ jobs and benefiting more than 100,000 people. We've built clean water systems, improved sanitation, and supported local businesses through microfinance initiatives.",
         image: communityImage
       },
-=======
->>>>>>> b639f864bb8508a8d2df0e2ebe7f4d61e4fb1a97
       getInvolved: {
         title: "Ways to Get Involved",
         steps: [
@@ -143,14 +140,11 @@ const ProgramDetail = () => {
         quote: "The mobile clinic brings hope to our remote area. My daughter received life-saving treatment that wasn't available before.",
         author: "Grace Achieng, Mother of Patient"
       },
-<<<<<<< HEAD
       impact: {
         title: "Bringing Healthcare to Remote Areas",
         description: "Our healthcare program has established 50 mobile clinics, trained 200 healthcare professionals, and provided medical care to over 7.5 K+ people in remote areas. We've implemented preventive health programs that have reduced disease incidence by 40% in our service areas.",
         image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop"
       },
-=======
->>>>>>> b639f864bb8508a8d2df0e2ebe7f4d61e4fb1a97
       getInvolved: {
         title: "Ways to Get Involved",
         steps: [
