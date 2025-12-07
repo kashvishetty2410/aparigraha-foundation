@@ -82,8 +82,8 @@ const ContactSection = () => {
       // In a real application, you would send this data to your backend
       console.log("Contact form submitted:", formData);
 
-      const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
-      const response = await fetch(`${backendUrl}/send-contact`, {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL || window.location.origin;
+      const response = await fetch(`${backendUrl}/api/send-contact.php`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
