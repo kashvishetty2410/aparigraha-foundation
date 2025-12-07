@@ -1,3 +1,17 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build output
+dist/
+deploy/
+
+# Environment variables (NEVER COMMIT!)
+.env
+.env.local
+.env.production
+api/.env
+
 # Logs
 logs
 *.log
