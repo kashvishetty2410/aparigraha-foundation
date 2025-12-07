@@ -6,12 +6,12 @@ import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 import {
   ArrowRight,
+  Calendar,
   Facebook,
   Heart,
   Instagram,
   Linkedin,
   Mail,
-  Calendar,
   MapPin,
   Phone,
   Youtube
@@ -192,7 +192,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-secondary" />
-                <span className="text-sm">Email - info@aparigrahafoundation.com</span>
+                <span className="text-sm">Email - help@aparigrahafoundation.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-secondary mt-0.5" />

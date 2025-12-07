@@ -86,14 +86,42 @@ class RazorpayService {
       return null;
     }
 
-    return new Promise((resolve) => {
-      const rzp = new window.Razorpay({
-        key: this.keyId,
-        ...options,
-      } as RazorpayPaymentOptions);
+    try {
+      // creating order from backend
+      const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+      const response = await fetch(`${backendUrl}/create-order`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: options.amount / 100, // Backend expects amount in major units, or we should clarify.
+                                        // Backend code: amount * 100. So backend expects major units.
+                                        // Frontend 'options.amount' is passed as 'amount * 100' (paise) from DonationModal.
+                                        // So we should pass options.amount / 100 to backend.
+          currency: options.currency,
+        }),
+      });
 
-      rzp.open();
-    });
+      if (!response.ok) {
+        throw new Error('Failed to create order');
+      }
+
+      const order = await response.json();
+
+      return new Promise((resolve) => {
+        const rzp = new window.Razorpay({
+          key: this.keyId,
+          ...options,
+          order_id: order.id, // Use the order ID from backend
+        } as RazorpayPaymentOptions);
+
+        rzp.open();
+      });
+    } catch (error) {
+      console.error('Error initializing payment:', error);
+      return null;
+    }
   }
 
   async initializeSubscription(options: Omit<RazorpaySubscriptionOptions, 'key'>): Promise<RazorpaySubscriptionResponse | null> {
@@ -113,15 +141,40 @@ class RazorpayService {
     });
   }
 
-  // In a real implementation, this would call your backend API to create a subscription
-  // For demonstration purposes, we're simulating this
   async createSubscriptionPlan(amount: number, currency: string = "INR"): Promise<string> {
-    // This would normally be an API call to your backend which would then call Razorpay's API
-    // For demo purposes, we'll return a mock subscription ID
-    return `sub_${Date.now()}`;
+    try {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+      const response = await fetch(`${backendUrl}/create-subscription`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount,
+          currency,
+          period: 'monthly',
+          customerName: 'Donor' // You might want to pass real name if available here, but currently it's just amount
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create subscription');
+      }
+
+      const data = await response.json();
+      return data.subscription_id;
+    } catch (error) {
+      console.error('Error creating subscription:', error);
+      // Fallback for demo or error handling - rethrow or return mock if backend fails is dangerous for real money
+      // But for this task, if backend fails, we should probably fail. 
+      // However user might not have started backend yet.
+      // I'll return a mock string with a log if it fails, OR just throw.
+      // Throwing is safer.
+      throw error;
+    }
   }
 }
 
 // Export a singleton instance
 // Note: In a real app, you should get this key from environment variables
-export const razorpayService = new RazorpayService(import.meta.env.RAZORPAY_KEY_ID || 'rzp_test_placeholder');
+export const razorpayService = new RazorpayService(import.meta.env.VITE_RAZORPAY_KEY_ID || 'rzp_test_placeholder');

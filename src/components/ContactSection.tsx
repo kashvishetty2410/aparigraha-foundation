@@ -4,11 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
@@ -30,7 +30,7 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email Us",
-      content: "info@aparigrahafoundation.com",
+      content: "help@aparigrahafoundation.com",
       description: "We'll respond within 24 hours",
       link: null
     },
@@ -82,8 +82,23 @@ const ContactSection = () => {
       // In a real application, you would send this data to your backend
       console.log("Contact form submitted:", formData);
 
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+      const response = await fetch(`${backendUrl}/send-contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: `${formData.subject ? `[${formData.subject}] ` : ''}${formData.message}`
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
 
       toast({
         title: "Message Sent!",
