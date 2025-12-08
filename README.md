@@ -1,12 +1,3 @@
-# Aparigraha Foundation Website
-
-This is the official website for Aparigraha Foundation, built with React, TypeScript, and Vite.
-
-## About Aparigraha Foundation
-
-Aparigraha Foundation is a non-profit organization dedicated to social welfare and community development. This website serves as the digital platform to showcase our programs, impact, and facilitate donations to support our mission.
-
-## Technologies Used
 
 This project is built with:
 

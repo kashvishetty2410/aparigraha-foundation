@@ -1,16 +1,14 @@
 <?php
 // Email service using PHPMailer
-// Install via: composer require phpmailer/phpmailer
-// Or download PHPMailer manually and include it
+// Manual include (no Composer needed)
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require_once __DIR__ . '/vendor/autoload.php'; // If using Composer
-// OR manually include PHPMailer files if not using Composer:
-// require_once __DIR__ . '/PHPMailer/src/Exception.php';
-// require_once __DIR__ . '/PHPMailer/src/PHPMailer.php';
-// require_once __DIR__ . '/PHPMailer/src/SMTP.php';
+// Manual includes - no Composer needed
+require_once __DIR__ . '/PHPMailer/src/Exception.php';
+require_once __DIR__ . '/PHPMailer/src/PHPMailer.php';
+require_once __DIR__ . '/PHPMailer/src/SMTP.php';
 
 function sendEmail($to, $subject, $htmlBody) {
     $config = require __DIR__ . '/config.php';
@@ -27,6 +25,9 @@ function sendEmail($to, $subject, $htmlBody) {
         $mail->SMTPSecure = $config['SMTP_PORT'] == 465 ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = $config['SMTP_PORT'];
         
+        // Enable debug output (comment out in production)
+        // $mail->SMTPDebug = 2; // 0 = off, 1 = client, 2 = client and server
+        
         // Recipients
         $mail->setFrom($config['SMTP_FROM_EMAIL'], $config['SMTP_FROM_NAME']);
         $mail->addAddress($to);
@@ -35,12 +36,14 @@ function sendEmail($to, $subject, $htmlBody) {
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body = $htmlBody;
+        $mail->AltBody = strip_tags($htmlBody); // Plain text version
         
         $mail->send();
-        error_log("Email sent successfully to: $to");
+        error_log("✓ Email sent successfully to: $to");
         return true;
     } catch (Exception $e) {
-        error_log("Email sending failed: {$mail->ErrorInfo}");
+        error_log("✗ Email sending failed to $to: {$mail->ErrorInfo}");
+        error_log("✗ Exception: " . $e->getMessage());
         return false;
     }
 }
