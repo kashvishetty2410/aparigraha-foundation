@@ -48,3 +48,7 @@ dist-ssr
 .next
 .out
 .cache
+
+# SSH keys
+hostinger_deploy_key
+hostinger_deploy_key.pub

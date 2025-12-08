@@ -66,4 +66,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./api/
           server-dir: /public_html/api/
-          dangerous-clean-slate: falset
+          dangerous-clean-slate: false
