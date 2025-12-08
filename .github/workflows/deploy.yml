@@ -29,25 +29,9 @@ jobs:
           VITE_RAZORPAY_KEY_ID: ${{ secrets.VITE_RAZORPAY_KEY_ID }}
           VITE_BACKEND_URL: ${{ secrets.VITE_BACKEND_URL }}
       
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.1'
-      
-      - name: Install Composer dependencies
-        run: |
-          cd api
-          composer install --no-dev --optimize-autoloader
-      
-      - name: Create deployment package
-        run: |
-          mkdir -p deploy
-          cp -r dist/* deploy/
-          cp -r api deploy/
-          
       - name: Create .htaccess for React routing
         run: |
-          cat > deploy/.htaccess << 'EOF'
+          cat > dist/.htaccess << 'EOF'
           <IfModule mod_rewrite.c>
             RewriteEngine On
             RewriteBase /
@@ -64,30 +48,22 @@ jobs:
           </IfModule>
           EOF
       
-      - name: Update API config with secrets
-        run: |
-          cat > deploy/api/config.php << 'EOF'
-          <?php
-          return [
-              'RAZORPAY_KEY_ID' => '${{ secrets.RAZORPAY_KEY_ID }}',
-              'RAZORPAY_KEY_SECRET' => '${{ secrets.RAZORPAY_KEY_SECRET }}',
-              'RAZORPAY_WEBHOOK_SECRET' => '${{ secrets.RAZORPAY_WEBHOOK_SECRET }}',
-              
-              'SMTP_HOST' => '${{ secrets.SMTP_HOST }}',
-              'SMTP_PORT' => ${{ secrets.SMTP_PORT }},
-              'SMTP_USER' => '${{ secrets.SMTP_USER }}',
-              'SMTP_PASS' => '${{ secrets.SMTP_PASS }}',
-              'SMTP_FROM_NAME' => '${{ secrets.SMTP_FROM_NAME }}',
-              'SMTP_FROM_EMAIL' => '${{ secrets.SMTP_FROM_EMAIL }}',
-          ];
-          EOF
-      
-      - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      - name: Deploy Frontend to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./deploy/
+          local-dir: ./dist/
           server-dir: /public_html/
           dangerous-clean-slate: false
+      
+      - name: Deploy API to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./api/
+          server-dir: /public_html/api/
+          dangerous-clean-slate: falset
