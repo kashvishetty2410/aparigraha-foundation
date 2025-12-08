@@ -11,10 +11,8 @@ function sendEmail($to, $subject, $htmlBody) {
         require_once __DIR__ . '/PHPMailer/src/PHPMailer.php';
         require_once __DIR__ . '/PHPMailer/src/SMTP.php';
         
-        use PHPMailer\PHPMailer\PHPMailer;
-        use PHPMailer\PHPMailer\Exception;
-        
-        $mail = new PHPMailer(true);
+        // Use fully qualified class names
+        $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
         
         try {
             $mail->isSMTP();
@@ -22,7 +20,7 @@ function sendEmail($to, $subject, $htmlBody) {
             $mail->SMTPAuth = true;
             $mail->Username = $config['SMTP_USER'];
             $mail->Password = $config['SMTP_PASS'];
-            $mail->SMTPSecure = $config['SMTP_PORT'] == 465 ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->SMTPSecure = $config['SMTP_PORT'] == 465 ? \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS : \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = $config['SMTP_PORT'];
             
             $mail->setFrom($config['SMTP_FROM_EMAIL'], $config['SMTP_FROM_NAME']);
@@ -36,7 +34,7 @@ function sendEmail($to, $subject, $htmlBody) {
             $mail->send();
             error_log("✓ Email sent successfully to: $to");
             return true;
-        } catch (Exception $e) {
+        } catch (\PHPMailer\PHPMailer\Exception $e) {
             error_log("✗ PHPMailer failed: {$mail->ErrorInfo}");
             // Fall through to basic mail()
         }
